@@ -70,8 +70,8 @@ email: ""
 
 ---
 My research focuses on judgment and decision making in general, with a special interest in consumer 
-financial decision-making, numerical cognition, and probabilistic reasoning. I also occasionally dabble
-in data forensics and error detection.
+financial decision-making, numerical cognition, and probabilistic reasoning. I also care about open-science, replicability, and reproducibility.
+
 
 On this website, I share a summary of my current projects and publications, tools and software that I have
  programmed, and occasional thoughts and tutorials on various research-related topics.

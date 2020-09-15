@@ -18,7 +18,7 @@ links:
 ---
 
 This library implements the [SPRITE procedure](https://peerj.com/preprints/26968/) in Python. To find out how to use 
-the library for error detection and data forensics, <a href="https://github.com/QuentinAndre/pysprite" target="_blank">visit the github repository.</a>
+the library, <a href="https://github.com/QuentinAndre/pysprite" target="_blank">visit the github repository.</a>
 
 The SPRITE procedure, and the original code on which this library is based, were developed by 
 [James Heathers](http://jamesheathers.com/), [Jordan Anaya](http://www.omnesres.com/), 
