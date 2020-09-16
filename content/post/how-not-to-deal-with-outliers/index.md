@@ -234,9 +234,9 @@ display(fig, metadata=dict(filename="Fig3"))
 ![png](files/Fig3.png)
 
 
-This graph shows a clear anomaly: Two observations are above the cutoffs defined by the authors, and are still tagged as "outliers" (and therefore excluded from the analysis). Those two observations are the dyads in the "Predicted High" condition with the **lowest** score.
+This graph shows a clear anomaly: Two observations are above the cutoffs defined by the authors, and are still tagged as "outliers" (and therefore excluded from the analysis). Those two observations are the observations in the "Predicted High" condition with the **lowest** score.
 
-Since this condition is predicted to have a higher score than the other two conditions, this might drive the pattern of results. What happens if we properly apply the cutoff instead, and include those two dyads back in the sample?
+Since this condition is predicted to have a higher score than the other two conditions, this might drive the pattern of results. What happens if we properly apply the cutoff instead, and include those two data points back in the sample?
 
 
 <div class="input-code">
@@ -280,7 +280,7 @@ display(fig, metadata=dict(filename="Fig4"))
 
 After correctly applying the cutoff, we no longer observe significant differences between conditions.
 
-It appears that data points that should not have been considered as outliers were excluded from the analysis. Unfortunately, this anomalous exclusion was responsible for the authors' pattern of results. In this particular case, I suspect that the authors manually 'tagged' their outliers in Excel, rather than applying a function. Such "manipulations by hand" are extremely error-prone, and should be avoided at all costs. It makes any analysis very hard to reproduce.
+t appears that data points that should not have been considered as outliers were excluded from the analysis. Unfortunately, this anomalous exclusion was responsible for the authors' pattern of results.
 
 # But Wait, There's More!
 
