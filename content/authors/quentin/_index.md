@@ -24,7 +24,7 @@ interests:
 - Financial Decision-Making
 - Probabilistic Reasoning
 - Numerical Cognition
-- Error Detection and Data Forensics
+- Open Science
 
 education:
   courses:
