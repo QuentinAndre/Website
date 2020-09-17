@@ -35,7 +35,7 @@ education:
     institution: HEC Paris, France
     year: 2012
   - course: Bachelor in History of Arts
-    institution: Sorbonne University
+    institution: Sorbonne University, France
     year: 2009
 
 # Social/Academic Networking
