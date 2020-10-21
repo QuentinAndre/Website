@@ -1,6 +1,6 @@
 ---
-title: "pycurve"
-image_as_title: true
+title: "pypcurve"
+image_as_title: false
 subtitle: "p-curve Analysis in Python"
 summary: "This Python library implements Simonsohn, Simmons and Nelson's 'p-curve' analysis."
 toc: false
