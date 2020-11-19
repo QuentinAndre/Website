@@ -99,15 +99,24 @@ warning if you are trying to use an option that has not been implemented.
 You can install pyprocessmacro with pip:
 
     pip install pyprocessmacro
+    
+or with conda:
+    
+    conda install pyprocessmacro -c conda-forge
 
 ## B. Minimal Example
 
+
 ```python
+import warnings
+
 import matplotlib.pyplot as plt
 import pandas as pd
 from pyprocessmacro import Process
 
-df = pd.read_csv("files/data.csv")
+warnings.filterwarnings("ignore", category=DeprecationWarning)
+
+df = pd.read_csv("data.csv")
 p = Process(data=df, model=4, x="Effort", y="Success", m=["MediationSkills"])
 p.summary()
 ```
@@ -200,6 +209,7 @@ display this information, just add the argument `suppr_init=True` when
 initializing the model.
 
 
+
 ```python
 p = Process(
     data=df,
@@ -221,6 +231,7 @@ that is not the IV, the DV, a moderator, or  a mediator."
 In
 pyprocessmacro, the list of variables to include as controls have to
 be explicitely specified in the "controls" argument.
+
 
 ```python
 p = Process(
@@ -258,6 +269,7 @@ Logistic regression. It goes without saying that this will return an error if yo
 dichotomous.
 
 
+
 ```python
 p = Process(
     data=df,
@@ -289,6 +301,7 @@ q, v, z, ... through the arguments qmodval, vmodval, zmodval...
 
 In pyprocessmacro, the user must instead supply custom values for each
 moderator in a dictionary passed to the `modval` parameter:
+
 
 ```python
 p = Process(
@@ -323,10 +336,10 @@ displays the following information:
 * If those statistics are relevant, indices for partial, conditional, and moderated moderated mediation will be 
 reported.
 
+
 ```python
 p = Process(
-    data=df, model=4, x="Effort", y="Success", m=["MediationSkills"], 
-    suppr_init=True
+    data=df, model=4, x="Effort", y="Success", m=["MediationSkills"], suppr_init=True
 )
 p.summary()
 ```
@@ -396,6 +409,7 @@ parameters in the model.
 * `estimation_results` gives you access to a dictionary containing all
 the statistical information of the model.
 
+
 ```python
 # The model for the outcome "MediationSkills"
 model_medskills = p.outcome_models["MediationSkills"]
@@ -415,6 +429,7 @@ print(model_medskills.summary())
             coeff     se       t      p   LLCI   ULCI
     Cons   4.1472 0.2921 14.1967 0.0000 3.5746 4.7197
     Effort 3.9167 0.2066 18.9570 0.0000 3.5118 4.3216
+
 
 
 ```python
@@ -476,6 +491,7 @@ model_medskills.coeff_summary()
 
 
 
+
 ```python
 # Access the R² of the model
 model_medskills.estimation_results["R2"]
@@ -484,7 +500,7 @@ model_medskills.estimation_results["R2"]
 
 
 
-    0.2647525050214642
+    0.2647525050214643
 
 
 
@@ -500,6 +516,7 @@ when calling Process.summary().
 * `coeff_summary()` returns a DataFrame of estimate, standard error,
 t-value, p-value, and confidence interval for each of the (conditional)
 direct effect(s).
+
 
 
 ```python
@@ -546,6 +563,7 @@ an error.
 Moderated Mediation, and their SE/CI, for each of the mediation paths.
 If the model does not compute a MMM, this will return an error.
 
+
 ```python
 # The model for the direct effect
 indirect_effect_model = p.indirect_model
@@ -568,6 +586,7 @@ In pyprocessmacro, this is done by calling the method
 the parameters estimates. Each row represents a bootstrap repetition,
 and the columns are explicitely labeled to identity the variables and
 the model.
+
 
 ```python
 boot_estimates = p.get_bootstrap_estimates()  # Called from the Process object directly.
@@ -701,8 +720,9 @@ pyprocessmacro offers four convenience functions for spotlight and floodlight an
 
 Let's consider a new model, in which the direct and indirect paths are moderated by two moderators (Process Model 12).
 
+
 ```python
-df = pd.read_csv("SampleData.csv")
+df = pd.read_csv("data.csv")
 p = Process(
     data=df,
     model=12,
@@ -715,68 +735,6 @@ p = Process(
 )
 ```
 
-
-    ---------------------------------------------------------------------------
-
-    FileNotFoundError                         Traceback (most recent call last)
-
-    <ipython-input-13-2a109d525810> in <module>
-    ----> 1 df = pd.read_csv("SampleData.csv")
-          2 p = Process(
-          3     data=df,
-          4     model=12,
-          5     x="Effort",
-
-
-    ~/anaconda3/lib/python3.7/site-packages/pandas/io/parsers.py in parser_f(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, dialect, error_bad_lines, warn_bad_lines, delim_whitespace, low_memory, memory_map, float_precision)
-        674         )
-        675 
-    --> 676         return _read(filepath_or_buffer, kwds)
-        677 
-        678     parser_f.__name__ = name
-
-
-    ~/anaconda3/lib/python3.7/site-packages/pandas/io/parsers.py in _read(filepath_or_buffer, kwds)
-        446 
-        447     # Create the parser.
-    --> 448     parser = TextFileReader(fp_or_buf, **kwds)
-        449 
-        450     if chunksize or iterator:
-
-
-    ~/anaconda3/lib/python3.7/site-packages/pandas/io/parsers.py in __init__(self, f, engine, **kwds)
-        878             self.options["has_index_names"] = kwds["has_index_names"]
-        879 
-    --> 880         self._make_engine(self.engine)
-        881 
-        882     def close(self):
-
-
-    ~/anaconda3/lib/python3.7/site-packages/pandas/io/parsers.py in _make_engine(self, engine)
-       1112     def _make_engine(self, engine="c"):
-       1113         if engine == "c":
-    -> 1114             self._engine = CParserWrapper(self.f, **self.options)
-       1115         else:
-       1116             if engine == "python":
-
-
-    ~/anaconda3/lib/python3.7/site-packages/pandas/io/parsers.py in __init__(self, src, **kwds)
-       1889         kwds["usecols"] = self.usecols
-       1890 
-    -> 1891         self._reader = parsers.TextReader(src, **kwds)
-       1892         self.unnamed_cols = self._reader.unnamed_cols
-       1893 
-
-
-    pandas/_libs/parsers.pyx in pandas._libs.parsers.TextReader.__cinit__()
-
-
-    pandas/_libs/parsers.pyx in pandas._libs.parsers.TextReader._setup_parser_source()
-
-
-    FileNotFoundError: [Errno 2] File SampleData.csv does not exist: 'SampleData.csv'
-
-
 ## A. Spotlight Analysis
 
 The two functions `spotlight_direct_effect()` and `spotlight_indirect_effect()` return the conditional direct/indirect effects at various levels of the moderator(s).
@@ -785,9 +743,100 @@ The two functions `spotlight_direct_effect()` and `spotlight_indirect_effect()` 
 
 By default, the spotlight values are the ones provided at initialization, but you can change them through the `spotval` argument:
 
+
 ```python
 p.spotlight_indirect_effect("MediationSkills", spotval={"SkillRelevance": [0, 1]})
 ```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Effect</th>
+      <th>Boot SE</th>
+      <th>LLCI</th>
+      <th>ULCI</th>
+      <th>Motivation</th>
+      <th>SkillRelevance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.946619</td>
+      <td>0.070250</td>
+      <td>0.802410</td>
+      <td>1.083349</td>
+      <td>0.012446</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.958880</td>
+      <td>0.077158</td>
+      <td>1.809195</td>
+      <td>2.114763</td>
+      <td>0.012446</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.935696</td>
+      <td>0.078388</td>
+      <td>1.781905</td>
+      <td>2.090382</td>
+      <td>1.013064</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3.939386</td>
+      <td>0.134884</td>
+      <td>3.681146</td>
+      <td>4.214726</td>
+      <td>1.013064</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2.924774</td>
+      <td>0.116568</td>
+      <td>2.696748</td>
+      <td>3.152203</td>
+      <td>2.013683</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>5.919893</td>
+      <td>0.202711</td>
+      <td>5.527697</td>
+      <td>6.328969</td>
+      <td>2.013683</td>
+      <td>1.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
 
 ## B. Floodlight Analysis
 
@@ -799,10 +848,36 @@ You must specify:
 
 If there are multiple moderators, the analysis is run assuming that all the other moderators are at 0. You can change this behavior through the `other_modval` argument.
 
+
 ```python
-jn_region = p.floodlight_indirect_effect("MediationSkills", "SkillRelevance", other_modval={"Motivation": 1})
+jn_region = p.floodlight_indirect_effect(
+    "MediationSkills", "SkillRelevance", other_modval={"Motivation": 1}
+)
 print(jn_region)
 ```
+
+    ********************** FLOODLIGHT ANALYSIS OF THE INDIRECT EFFECT **********************
+    
+    ----------------------------------- Analysis Details -----------------------------------
+    
+    Mediator:
+        MediationSkills
+    
+    Focal Moderator:
+        SkillRelevance, Range = [-2.108, 4.502]
+    
+    Spotlight value for other moderators:
+        Motivation = 1
+    
+    ----------------------------------- Analysis Results -----------------------------------
+    
+    The indirect effect is significantly negative on the interval [-2.108, -1.042]
+    The indirect effect is significantly positive on the interval [-0.8986, 4.502]
+    
+    
+    ****************************************************************************************
+    
+
 
 # 6. Plotting Capabilities
 
@@ -836,6 +911,7 @@ The examples below are showing what the plots could look like for a
 model with two moderators.
 
 
+
 ```python
 # Conditional direct effects of Effort, at values of Motivation (x-axis)
 g = p.plot_conditional_direct_effects(x="Motivation", hue="SkillRelevance")
@@ -847,6 +923,10 @@ plt.close()
 display(fig, metadata=dict(filename="Fig1"))
 ```
 
+
+![png](notebook_files/Fig1.png)
+
+
 ## B. Different Spotlight Values
 
 By default, the spotlight values used to plot the effects are the same
@@ -855,6 +935,7 @@ as the ones passed when initializing Process.
 However, you can pass custom values for some, or all, the moderators
 through the `mods_at` argument. The library will automatically compute
 the conditional effects at those new spotlight values, and plot them.
+
 
 
 ```python
@@ -873,6 +954,10 @@ plt.close()
 display(fig, metadata=dict(filename="Fig2"))
 ```
 
+
+![png](notebook_files/Fig2.png)
+
+
 ## C. Different Visualizations of Uncertainty
 
 The display of confidence intervals for the direct/indirect effects can
@@ -886,6 +971,7 @@ x-axis. It works well when the moderator displayed on the x-axis is
 dichotomous or has few values (e.g. gender), as it reduces clutter.
 * `errstyle="none"` does not show the error on the plot.
 
+
 ```python
 g = p.plot_conditional_indirect_effects(
     med_name="MediationSkills",
@@ -894,7 +980,7 @@ g = p.plot_conditional_indirect_effects(
     # Dichotomous values for moderators...
     modval={"SkillRelevance": [0, 1], "Motivation": [0, 1]},
     # Call for error bars rather than error bands
-    errstyle="ci"
+    errstyle="ci",
 )
 
 # Display figure
@@ -903,6 +989,10 @@ fig = plt.gcf()
 plt.close()
 display(fig, metadata=dict(filename="Fig3"))
 ```
+
+
+![png](notebook_files/Fig3.png)
+
 
 ## D. Customizing Plots
 
@@ -914,6 +1004,7 @@ object, on which the following functions are called:
  * `plt.plot` and `plt.errorbar` when `errstyle="ci"`
  
 You can pass custom arguments to each of those objects to customize the appearance of the plot:
+
 
 ```python
 # Plot: Make the lines bolder
@@ -928,7 +1019,7 @@ g = p.plot_conditional_indirect_effects(
     x="Motivation",
     errstyle="ci",
     hue="SkillRelevance",
-    modval={"Motivation":[-2, -1, 0, 1, 2]},
+    modval={"Motivation": [-2, -1, 0, 1, 2]},
     plot_kws=plot_kws,
     err_kws=err_kws,
     facet_kws=facet_kws,
@@ -941,10 +1032,14 @@ plt.close()
 display(fig, metadata=dict(filename="Fig4"))
 ```
 
+
+![png](notebook_files/Fig4.png)
+
+
 # 7. About
 
 pyprocessmacro was developed by Quentin André during his Ph.D. in
-Marketing at INSEAD Business School, France.
+Marketing at INSEAD, France.
 
 His work on this library was made possible by Andrew F. Hayes' 
 [book](http:/afhayes.com/introduction-to-mediation-moderation-and-conditional-process-analysis.html), 

@@ -15,7 +15,7 @@ role: Quentin André<br>Assistant Professor of Marketing
 # Organizations/Affiliations
 organizations:
 - name: Leeds School of Business, University of Colorado Boulder
-  url: https://www.rsm.nl/people/quentin-andre/
+  url: https://www.colorado.edu/business/quentin-andre
 
 # Short bio (displayed in user profile at end of posts)
 bio: I use experiments and computer simulations to understand how consumers make judgements and decisions from data. 
