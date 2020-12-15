@@ -4,3 +4,6 @@
 # Hugo
 resources/
 public/
+
+# Misc
+.ipynb_checkpoints

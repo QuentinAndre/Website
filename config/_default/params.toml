@@ -86,14 +86,14 @@ phone = ""
 
 # Address
 # For country_code, use the 2-letter ISO code (see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 )
-address = {street = "Burgemeester Oudlaan 50", city = "Rotterdam", region = "", postcode = "3062PA", country = "Netherlands", country_code = "NL"}
+address = {street = "995 Regent Dr", city = "Boulder", region = "CO", postcode = "80309", country = "USA", country_code = "US"}
 
 # Geographic coordinates
 # To get your coordinates, right-click on Google Maps and choose "What's here?". The coords will show up at the bottom.
-coordinates = {latitude = "51.915851", longitude = "4.526209"}
+coordinates = {latitude = "40.006284728683255, ", longitude = "-105.26362366322135"}
 
 # Directions for visitors to locate you.
-directions = "T10-34"
+directions = ""
 
 # Office hours
 # A list of your office hours. To remove, set to an empty list `[]`.
@@ -120,7 +120,7 @@ contact_links = [
 sharing_image = ""
 
 # Twitter username (without @). Used when a visitor shares your site on Twitter.
-twitter = ""
+twitter = "andre_quentin"
 
 ############################
 ## Regional Settings

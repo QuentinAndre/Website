@@ -91,7 +91,9 @@ display(fig, metadata=dict(filename="Fig1"))
 ```
 
 
+    
 ![png](files/Fig1.png)
+    
 
 
 The mean is lower than what we'd like, the standard deviation is too high, and the distribution would not look normal at all when reported in a distribution builder.
@@ -124,10 +126,14 @@ while (
     m = numbers.mean()
     sd = numbers.std()
     skew = stats.skew(numbers)
-print("After {} iterations, we have a satisfying distribution".format(i))
+HTML("After {} iterations, we have a satisfying distribution".format(i))
 ```
 
-    After 6902 iterations, we have a satisfying distribution
+
+
+
+After 6902 iterations, we have a satisfying distribution
+
 
 
 That took a few seconds. Let's visualize it...
@@ -150,7 +156,9 @@ display(fig, metadata=dict(filename="Fig2"))
 ```
 
 
+    
 ![png](files/Fig2.png)
+    
 
 
 The distribution now has the mean, variance and skew that we want... But it still not perfectly normal. In particular, the mode does not correspond to the mean... Do we really want to give reviewer B something to nitpick about?
@@ -199,14 +207,15 @@ def bin_dist(dist, buckets, n):
 Now if we apply this method:
 
 ```python
+binned_numbers = bin_dist(stats.norm(MU, SIGMA), np.arange(0, 50, 2), 25)
 fig, ax = plt.subplots(1)
-ax.hist(round_numbers, bins=BINS, ec="white", align="mid")
-ax.axvline(np.mean(round_numbers), color="darkred")
+ax.hist(binned_numbers, bins=BINS, ec="white", align="mid")
+ax.axvline(np.mean(binned_numbers), color="darkred")
 ax.annotate(
     r"$\mu = {:.2f}, \sigma = {:.2f}$".format(
-        round_numbers.mean(), round_numbers.std()
+        binned_numbers.mean(), binned_numbers.std()
     ),
-    (5, 7),
+    (26, 4.1),
 )
 ax.set_ylabel("Number of values")
 ax.set_xlabel("Bins")
@@ -216,7 +225,9 @@ display(fig, metadata=dict(filename="Fig3"))
 ```
 
 
+    
 ![png](files/Fig3.png)
+    
 
 
 This is exactly what we want ! A normal-like distribution of integers.
@@ -261,9 +272,7 @@ for i, ax in enumerate(axes):
 
 for a, t in zip(
     axes,
-    [r"$\mathcal{N}(25, 9)$",
-     r"$\chi(1)$ (scaled)",
-     r"$\beta(0.5, 0.5)$ (scaled)"],
+    [r"$\mathcal{N}(25, 9)$", r"$\chi(1)$ (scaled)", r"$\beta(0.5, 0.5)$ (scaled)"],
 ):
     a[0].set_ylabel("{}".format(t), size=8)
 
@@ -275,15 +284,10 @@ plt.close()
 display(fig, metadata=dict(filename="Fig4"))
 ```
 
-```python
-A few rules to finish:
-* Don't use too few buckets. The larger your buckets are, the less faithful the representation of the distribution will be.
-* Don't present too few observations. You also need a good number of them to faithfully represent the distribution.
-* Make sure that your buckets cover the "full" distribution: your distribution should have support on all buckets, and the buckets should cover the majority of the support of the distribution.
-```
 
-
+    
 ![png](files/Fig4.png)
+    
 
 
 A few rules to finish:
