@@ -37,7 +37,7 @@ summary: "Can loss aversion disappear and reverse? In this article, we show that
 Walasek and Stewart (2015) are driven by an invalid experimental paradigm. After correcting this error, we do not see
  evidence that loss aversion is shaped by the distribution of gains and losses that people have encountered."
 
-tags: ['loss aversion']
+tags: ['loss aversion', 'error detection']
 categories: []
 featured: false
 

@@ -39,7 +39,7 @@ for a phenomenon we call dispersion spillover: Seeing more (vs. less) dispersed 
 perceive more price dispersion in another category. This dispersion spillover influences consumers’ judgments of price 
 attractiveness and changes their likelihood to search for (and find) better options."
 
-tags: ['food', 'lay beliefs', 'categorization']
+tags: ['numerical cognition', 'learning', 'prices']
 categories: []
 featured: false
 

@@ -142,7 +142,7 @@ display(fig, metadata=dict(filename="Fig1"))
 ![png](files/Fig1.png)
 
 
-Those results are obtained after a serie of (pre-registered) exclusions. In particular, the authors write in the pre-registration that they will exclude participants whose scores are **'extreme outliers, as identified by Boxplot'**.
+Those results are obtained after a series of (pre-registered) exclusions. In particular, the authors write in the pre-registration that they will exclude participants whose scores are **'extreme outliers, as identified by boxplot'**.
 
 This description is a bit vague, but those exclusions were visibly helpful: This is what the results look like before excluding the outliers.
 
@@ -280,23 +280,24 @@ display(fig, metadata=dict(filename="Fig4"))
 
 After correctly applying the cutoff, we no longer observe significant differences between conditions.
 
-t appears that data points that should not have been considered as outliers were excluded from the analysis. Unfortunately, this anomalous exclusion was responsible for the authors' pattern of results.
+It appears that data points that should not have been considered as outliers were excluded from the analysis. 
+Unfortunately, this anomalous exclusion appears to make the difference between significant and non-significant differences between conditions.
 
 # But Wait, There's More!
 
-But what if the authors had not made this mistake, and correctly included the two "anomalous outliers"?
+But what if the analysis had correctly included the two "anomalous outliers"?
 
-Unfortunately, **their analysis would still be invalid, because they do not apply a consistent cutoff across conditions to exclude their outliers.** 
+Unfortunately, **it would still be invalid, because the outliers are excluded within conditions (rather than across the data)!** 
 
-When people apply a different cutoffs for different conditions, they are implicitly rejecting the null that the conditions are drawn from a common distribution. How can we interpret the results of null-hypothesis tests if we have already assumed that the null was not true when pre-processing the data?
+When researchers apply a different cutoffs for different conditions, they are implicitly rejecting the null that the conditions are drawn from a common distribution. How can we interpret the results of null-hypothesis tests if we have already assumed that the null was not true when pre-processing the data?
 
-In particular, when the data has small N per condition and overdispersion (which is true of the authors'), ignoring this fact has extremely severe consequences on the false-positive rate.
+In particular, when the data has small N per condition and is overdispersed (which is true of this paper), ignoring this fact has extremely severe consequences on the false-positive rate.
 
-To illustrate this, I ran the following simulation:
+To illustrate, I ran the following simulation:
 
-1. I created two simulated "conditions" by draw participants at random, without replacement, from the authors' data. I draw 32  observations in each condition (i.e., the average number of participants in the authors' conditions).
-2. I run three different t-tests on this simulated data (as the authors did, I apply Welch's t-test, but the same results are observed with standards t-tests):
-    * A first t-test using the authors' method: I exclude the outliers within each of the two conditions, applying **different cutoffs** to each of the two conditions
+1. I created two simulated "conditions" by draw participants at random, without replacement, from the papers' data. I draw 32  observations in each condition (i.e., the average number of participants in each condition).
+2. I run three different t-tests on this simulated data (as in the paper, I apply Welch's t-test, but the same results are observed with standards t-tests):
+    * A first t-test using the paper's method: I exclude the outliers within each of the two conditions, applying **different cutoffs** to each of the two conditions
     * A second t-test after excluding the outliers, identified by a **common cutoff** across the two conditions (the "Common Cutoff" t-test)
     * A third t-test with **no exclusion** of outliers.
 3. I write down the p-value of each of the three t-tests, and repeat this experiment a very large of time (~10,000 times).
