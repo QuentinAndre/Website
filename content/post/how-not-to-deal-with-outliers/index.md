@@ -3,7 +3,7 @@
 
 title: "How Not To Deal with Outliers"
 subtitle: "or 'A Curious Case of Convenient Outliers'"
-summary: "A short case study showing how NOT to deal with your outliers, featuring a recent paper published in psychology."
+summary: "A short case study showing how not to deal with your outliers, featuring a recent paper published in psychology."
 authors: [Quentin André]
 tags: [Data Forensics, Error Detection, Tutorial]
 categories: []
@@ -36,7 +36,7 @@ links:
   - icon_pack: fas
     icon: database
     name: Data
-    url: 'files/data.csv'
+    url: 'files/data_blind.csv'
 
 ---
 
@@ -45,10 +45,10 @@ links:
 	crossorigin="anonymous"></script>
 
 <script>
-$(document).ready(function() {
+$(document).ready(function() {          
     $('.code_shower').on('click',function(){
 	var header = $(this);
-	var codecell = $(this).next();
+	var codecell = $(this).next()
         codecell.slideToggle(0, function() {
 		if (codecell.is(':hidden')) {
 			header.text("Show Code");
@@ -80,12 +80,15 @@ div.code_shower {
 }
 
 </style>
+**Addendum: It turns out that the "anomalous" exclusions documented in this blog post can be explained by an unusual procedure:
+Iterated exclusions within conditions. Please check out <a href="https://quentinandre.net/post/how-not-to-deal-with-outliers/">
+this updated blogpost</a> for more details.**
 
-<div class="input-code">
+<div class="inner_cell">
+<div class="input_area">
 <div class="code_shower hidden_default">Show Code</div>
-<div class="code_content">
 
-```
+```python
 # Imports
 import matplotlib.pyplot as plt
 import numpy as np
@@ -96,7 +99,7 @@ import seaborn as sns
 from IPython.display import HTML, display
 
 # Reading the original data
-df_all = pd.read_csv("Data_Blind.csv")
+df_all = pd.read_csv("files/data_blind.csv")
 df_no_outliers = df_all.query("Excluded_Outliers == 'No'")
 ```
 
@@ -105,12 +108,11 @@ df_no_outliers = df_all.query("Excluded_Outliers == 'No'")
 
 A recent paper in a leading psychology journal reports a pre-registered experiment with significant results: Participants in the "Predicted High" condition have higher scores than participants in the "Predicted Low" condition.
 
-
-<div class="input-code">
+<div class="inner_cell">
+<div class="input_area">
 <div class="code_shower hidden_default">Show Code</div>
-<div class="code_content">
 
-```
+```python
 h = df_no_outliers.query("Condition == 'Predicted High'").Score
 l1 = df_no_outliers.query("Condition == 'Predicted Low 1'").Score
 l2 = df_no_outliers.query("Condition == 'Predicted Low 2'").Score
@@ -126,9 +128,9 @@ g = sns.catplot(
 )
 g.set_ylabels("Score")
 g.set_xlabels("")
-g.ax.annotate(f"'Low 1' vs. 'High'\np = {p1:-1.3f}", 
+g.ax.annotate(f"'Low 1' vs. 'High'\np = {p1:-1.3f}",
               (0, 995), ha="center", va="center")
-g.ax.annotate(f"'Low 2' vs. 'High'\np = {p2:.3f}", 
+g.ax.annotate(f"'Low 2' vs. 'High'\np = {p2:.3f}",
               (1, 995), ha="center", va="center");
 fig = plt.gcf()
 plt.close()
@@ -139,7 +141,9 @@ display(fig, metadata=dict(filename="Fig1"))
 </div>
 
 
+    
 ![png](files/Fig1.png)
+    
 
 
 Those results are obtained after a series of (pre-registered) exclusions. In particular, the authors write in the pre-registration that they will exclude participants whose scores are **'extreme outliers, as identified by boxplot'**.
@@ -147,11 +151,11 @@ Those results are obtained after a series of (pre-registered) exclusions. In par
 This description is a bit vague, but those exclusions were visibly helpful: This is what the results look like before excluding the outliers.
 
 
-<div class="input-code">
+<div class="inner_cell">
+<div class="input_area">
 <div class="code_shower hidden_default">Show Code</div>
-<div class="code_content">
 
-```
+```python
 h = df_all.query("Condition == 'Predicted High'").Score
 l1 = df_all.query("Condition == 'Predicted Low 1'").Score
 l2 = df_all.query("Condition == 'Predicted Low 2'").Score
@@ -168,9 +172,9 @@ g = sns.catplot(
     kind="point",
 )
 g.set_xlabels("")
-g.ax.annotate(f"'Low 1' vs. 'High'\np = {p1:-1.3f}", 
+g.ax.annotate(f"'Low 1' vs. 'High'\np = {p1:-1.3f}",
               (0, 985), ha="center", va="center")
-g.ax.annotate(f"'Low 2' vs. 'High'\np = {p2:.3f}", 
+g.ax.annotate(f"'Low 2' vs. 'High'\np = {p2:.3f}",
               (1, 985), ha="center", va="center")
 fig = plt.gcf()
 plt.close()
@@ -181,7 +185,9 @@ display(fig, metadata=dict(filename="Fig2"))
 </div>
 
 
+    
 ![png](files/Fig2.png)
+    
 
 
 Is the paper a bit more precise about those exclusions? Yes! Another study in the paper defines the *extreme outliers* cutoff as *three times the interquartile range below the lower quartile".
@@ -190,12 +196,11 @@ $$ x < Q_1 - 3\times IQR$$
 
 The paper also specifies that this threshold will be applied *within each condition* (more on this later). Does the data match this definition?
 
-
-<div class="input-code">
+<div class="inner_cell">
+<div class="input_area">
 <div class="code_shower hidden_default">Show Code</div>
-<div class="code_content">
 
-```
+```python
 g = sns.catplot(
     y="Score",
     x="Condition",
@@ -207,7 +212,7 @@ g = sns.catplot(
 )
 
 for c, x in zip(
-    ["Predicted Low 1", "Predicted Low 2", "Predicted High"], 
+    ["Predicted Low 1", "Predicted Low 2", "Predicted High"],
     [0, 1, 2]
 ):
     scores = df_all.query("Condition == @c").Score
@@ -231,19 +236,20 @@ display(fig, metadata=dict(filename="Fig3"))
 </div>
 
 
+    
 ![png](files/Fig3.png)
+    
 
 
 This graph shows a clear anomaly: Two observations are above the cutoffs defined by the authors, and are still tagged as "outliers" (and therefore excluded from the analysis). Those two observations are the observations in the "Predicted High" condition with the **lowest** score.
 
 Since this condition is predicted to have a higher score than the other two conditions, this might drive the pattern of results. What happens if we properly apply the cutoff instead, and include those two data points back in the sample?
 
-
-<div class="input-code">
+<div class="inner_cell">
+<div class="input_area">
 <div class="code_shower hidden_default">Show Code</div>
-<div class="code_content">
 
-```
+```python
 df_correct = df_all.query("Score > 909.31")
 
 h = df_correct.query("Condition == 'Predicted High'").Score
@@ -262,9 +268,9 @@ g = sns.catplot(
     kind="point",
 )
 g.set_xlabels("")
-g.ax.annotate(f"'Low 1' vs. 'High'\np = {p1:-1.3f}", 
+g.ax.annotate(f"'Low 1' vs. 'High'\np = {p1:-1.3f}",
               (0, 993), ha="center", va="center")
-g.ax.annotate(f"'Low 2' vs. 'High'\np = {p2:.3f}", 
+g.ax.annotate(f"'Low 2' vs. 'High'\np = {p2:.3f}",
               (1, 993), ha="center", va="center")
 fig = plt.gcf()
 plt.close()
@@ -275,19 +281,21 @@ display(fig, metadata=dict(filename="Fig4"))
 </div>
 
 
+    
 ![png](files/Fig4.png)
+    
 
 
 After correctly applying the cutoff, we no longer observe significant differences between conditions.
 
-It appears that data points that should not have been considered as outliers were excluded from the analysis. 
+It appears that data points that should not have been considered as outliers were excluded from the analysis.
 Unfortunately, this anomalous exclusion appears to make the difference between significant and non-significant differences between conditions.
 
-# But Wait, There's More!
+## But Wait, There's More!
 
 But what if the analysis had correctly included the two "anomalous outliers"?
 
-Unfortunately, **it would still be invalid, because the outliers are excluded within conditions (rather than across the data)!** 
+Unfortunately, **it would still be invalid, because the outliers are excluded within conditions (rather than across the data)!**
 
 When researchers apply a different cutoffs for different conditions, they are implicitly rejecting the null that the conditions are drawn from a common distribution. How can we interpret the results of null-hypothesis tests if we have already assumed that the null was not true when pre-processing the data?
 
@@ -302,12 +310,11 @@ To illustrate, I ran the following simulation:
     * A third t-test with **no exclusion** of outliers.
 3. I write down the p-value of each of the three t-tests, and repeat this experiment a very large of time (~10,000 times).
 
-
-<div class="input-code">
+<div class="inner_cell">
+<div class="input_area">
 <div class="code_shower hidden_default">Show Code</div>
-<div class="code_content">
 
-```
+```python
 # A few useful functions first
 
 def exclude_extreme_outliers(x):
@@ -363,8 +370,8 @@ pvals_no_excl, pvals_common_cutoff, pvals_diff_cutoffs = pvals
 
 # Now let's visualize the p-values and false-positive rates:
 hist_kws = dict(
-    bins=np.arange(0, 1.025, 0.025), 
-    align="mid", density=True, 
+    bins=np.arange(0, 1.025, 0.025),
+    align="mid", density=True,
     histtype="step", lw=1.5
 )
 alpha_no_excl = (pvals_no_excl < 0.05).mean()
@@ -372,8 +379,8 @@ alpha_common = (pvals_common_cutoff < 0.05).mean()
 alpha_diff = (pvals_diff_cutoffs < 0.05).mean()
 fig, ax = plt.subplots(1)
 ax.hist(
-    pvals_no_excl, 
-    **hist_kws, 
+    pvals_no_excl,
+    **hist_kws,
     label=f"No Exclusion ($\\alpha= {alpha_no_excl:.3f}$)"
 )
 ax.hist(
@@ -398,14 +405,16 @@ display(fig, metadata=dict(filename="Fig5"))
 </div>
 
 
+    
 ![png](files/Fig5.png)
+    
 
 
-Since the two "conditions" are formed by drawing at random from the pooled data, they should on average do not differ from each other: The p-values reported by the t-tests should be uniformly spread on the interval [0, 1], and should be lower than .05 only 5% of the time. 
+Since the two "conditions" are formed by drawing at random from the pooled data, they should on average do not differ from each other: The p-values reported by the t-tests should be uniformly spread on the interval [0, 1], and should be lower than .05 only 5% of the time.
 
 This is indeed what we see in the "No Exclusion" and "Common Cutoff" conditions, with a nominal $\alpha$ close to .05.
 
-What about the "Different Cutoffs" condition? The distribution of p-values is so right-skewed that the false positive rate is multiplied by **four**. 
+What about the "Different Cutoffs" condition? The distribution of p-values is so right-skewed that the false positive rate is multiplied by **four**.
 
 Why does this happen? Intuitively, it is because applying different cutoffs to different conditions will **amplify** the small differences that are found under the null, and make those differences more extreme. This leads to a massive inflation in Type 1 error.
 

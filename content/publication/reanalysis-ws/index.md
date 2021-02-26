@@ -4,7 +4,7 @@
 title: "No Evidence for Loss Aversion Disappearance and Reversal in Walasek and Stewart (2015)"
 authors: [Quentin André, Bart de Langhe]
 date: "2020-07-15"
-doi: ""
+doi: "10.1037/xge0001052"
 
 # Schedule page publish date (NOT publication's date).
 publishDate: 2020-07-15
