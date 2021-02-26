@@ -5,7 +5,7 @@ title: "Correctly Dealing with Outliers (Part One)"
 subtitle: ""
 summary: "A two-part blog post on outlier exclusion procedures, and their impact on false-positive rates."
 authors: [Quentin André]
-tags: [Data Forensics, Error Detection, Tutorial]
+tags: [Tutorial, Research Methods]
 categories: []
 date: 2021-02-25
 lastmod: 2021-02-25

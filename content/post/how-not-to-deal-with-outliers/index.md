@@ -5,7 +5,7 @@ title: "How Not To Deal with Outliers"
 subtitle: "or 'A Curious Case of Convenient Outliers'"
 summary: "A short case study showing how not to deal with your outliers, featuring a recent paper published in psychology."
 authors: [Quentin André]
-tags: [Data Forensics, Error Detection, Tutorial]
+tags: [Error Detection, Tutorial]
 categories: []
 date: 2020-08-13
 lastmod: 2020-08-13
