@@ -81,7 +81,7 @@ div.code_shower {
 
 </style>
 **Addendum: It turns out that the "anomalous" exclusions documented in this blog post can be explained by an unusual procedure:
-Iterated exclusions within conditions. Please check out <a href="https://quentinandre.net/post/how-not-to-deal-with-outliers/">
+Iterated exclusions within conditions. Please check out <a href="https://quentinandre.net/post/dealing-with-outliers-part-one/">
 this updated blogpost</a> for more details.**
 
 <div class="inner_cell">
