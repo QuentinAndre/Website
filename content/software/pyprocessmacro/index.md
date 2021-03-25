@@ -924,7 +924,7 @@ display(fig, metadata=dict(filename="Fig1"))
 ```
 
 
-![png](notebook_files/Fig1.png)
+![png](files/Fig1.png)
 
 
 ## B. Different Spotlight Values
@@ -955,7 +955,7 @@ display(fig, metadata=dict(filename="Fig2"))
 ```
 
 
-![png](notebook_files/Fig2.png)
+![png](files/Fig2.png)
 
 
 ## C. Different Visualizations of Uncertainty
@@ -991,7 +991,7 @@ display(fig, metadata=dict(filename="Fig3"))
 ```
 
 
-![png](notebook_files/Fig3.png)
+![png](files/Fig3.png)
 
 
 ## D. Customizing Plots
@@ -1033,7 +1033,7 @@ display(fig, metadata=dict(filename="Fig4"))
 ```
 
 
-![png](notebook_files/Fig4.png)
+![png](files/Fig4.png)
 
 
 # 7. About
