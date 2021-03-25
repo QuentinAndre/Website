@@ -49,7 +49,7 @@ featured: false
 #   icon_pack: fab
 #   icon: twitter
 
-url_pdf: 'publication/fop-claims/manuscript.pdf'
+url_pdf: 'publication/fop-claims/fop-claims.pdf'
 url_code:
 url_dataset: 
 url_poster:

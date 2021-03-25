@@ -49,7 +49,7 @@ featured: false
 #   icon_pack: fab
 #   icon: twitter
 
-url_pdf: 'publication/reanalysis-ws/manuscript.pdf'
+url_pdf: 'publication/reanalysis-ws/reanalysis-ws.pdf'
 url_code: 'https://osf.io/67ng8/'
 url_dataset: 'https://osf.io/67ng8/'
 url_poster:

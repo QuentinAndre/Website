@@ -38,7 +38,7 @@ featured: false
 #   icon_pack: fab
 #   icon: twitter
 
-url_pdf: 'publication/outliers-blind-hypothesis/manuscript.pdf'
+url_pdf: 'publication/outliers-blind-hypothesis/outliers-blind-hypothesis.pdf'
 url_code: 'https://osf.io/3tz76/'
 url_dataset: 'https://osf.io/3tz76/'
 url_poster:
