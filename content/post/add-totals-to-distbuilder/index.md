@@ -8,7 +8,7 @@ authors: [Quentin André]
 tags: [Javascript, distBuilder, Tutorial]
 categories: []
 date: 2021-03-25
-lastmod: 2021-03-25
+lastmod: 2021-03-26
 featured: false
 draft: false
 toc: false
@@ -33,9 +33,9 @@ A researcher recently emailed me to ask if there is an easy way to add "totals" 
 helpful when participants can allocate many balls to each bucket, and you want to help them keep track of how many they
 have allocated.
 
-This is a functionality I will probably add soon. In the meantime, here's an easy fix. Click the CSS and the JS 
-buttons to see the code.
+I have added this functionality to distBuilder. All you have to do is add the argument `addTotals: true` when initializing
+the distBuilder. See below for an example.
 
-{{< codepen id="PoWPqOG" >}}
+{{< codepen id="yLgObEb" >}}
 
 And voilà! Your participants can now see how many balls they have allocated to each bucket.
