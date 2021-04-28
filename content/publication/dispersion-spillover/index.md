@@ -4,12 +4,12 @@
 
 title: "Can Consumers Learn Price Dispersion? Evidence for Dispersion Spillover across Categories"
 authors: [Quentin André, Nicholas S. Reinholtz, Bart de Langhe]
-date: "2020"
-doi: ""
+date: "2021"
+doi: "10.1093/jcr/ucab030"
 
 # Schedule page publish date (NOT publication's date).
 
-publishDate: 2020-07-14
+publishDate: 2021-04-26
 
 # Publication type.
 
@@ -19,32 +19,32 @@ publishDate: 2020-07-14
 
 # 7 = Thesis; 8 = Patent
 
-publication_types: [3]
+publication_types: [2]
 
 # Publication name and optional abbreviated publication name.
 
-publication: ""
-publication_short: ""
+publication: "Journal of Consumer Research"
+publication_short: "JCR"
 
-abstract: "Price knowledge is a key antecedent of many consumer judgments and decisions. This paper examines consumers’
-ability to form accurate beliefs about the minimum, the maximum, and the overall variability of prices for multiple
-product categories. Eight experiments provide evidence for a novel phenomenon we call dispersion spillover: Consumers
-tend to overestimate price dispersion in a category after encountering another category in which prices are more
-dispersed (versus equally or less dispersed). We show that this dispersion spillover is consequential: It influences the
-likelihood that consumers will search for (and find) better prices and offers, and how much consumers bid in auctions.
-Finally, we disentangle two cognitive processes that might underlie dispersion spillover. Our results suggest that
-judgments of dispersion are not only based on specific prices stored in memory, and that dispersion spillover does not
-simply reflect the inappropriate activation of prices from other categories. Instead, it appears that consumers also
-form “intuitive statistics” of dispersion: Summary representations that encode the dispersion of prices in the
-environment, but that are insufficiently category-specific."
+abstract: 'Price knowledge is a key antecedent of many consumer judgments and decisions. This paper examines consumers’ 
+ability to form accurate beliefs about the minimum, the maximum, and the overall variability of prices for multiple 
+product categories. Eight experiments provide evidence for a novel phenomenon we call dispersion spillover: Consumers 
+tend to overestimate price dispersion in a category after encountering another category in which prices are more 
+dispersed (versus equally or less dispersed). Our experiments show that this dispersion spillover is consequential: 
+It influences the likelihood that consumers will search for (and find) better prices and offers, and how much consumers 
+bid in auctions. Finally, we disentangle two cognitive processes that might underlie dispersion spillover. Our results 
+suggest that judgments of dispersion are not only based on specific prices stored in memory, and that dispersion 
+spillover does not simply reflect the inappropriate activation of prices from other categories. Instead, it appears 
+that consumers also form “intuitive statistics” of dispersion: Summary representations that encode the dispersion of 
+prices in the environment, but that are insufficiently category-specific.'
 
 # Summary. An optional shortened abstract.
 
-summary: "Should I search for a better price? Should I accept this job offer? To answer those questions, consumers form
-beliefs about the dispersion of prices or salaries... but how accurate are those beliefs? We provide evidence for a
-phenomenon we call dispersion spillover: Seeing more (vs. less) dispersed prices in one category leads people to
-perceive more price dispersion in another category. This dispersion spillover influences consumers’ judgments of price
-attractiveness and changes their likelihood to search for (and find) better options."
+summary: "Should I search for a cheaper flight? How much should I bid for the house? To answer those questions, consumers 
+form beliefs about the dispersion of flight prices or house bids... but how accurate are those beliefs? We provide 
+evidence for a phenomenon we call dispersion spillover: Seeing more (vs. less) dispersed prices in one category leads 
+people to perceive more price dispersion in another category. This dispersion spillover influences consumers’ judgments 
+of price attractiveness and changes their likelihood to search for (and find) better options."
 
 tags: ['numerical cognition', 'learning', 'prices']
 categories: []
@@ -65,13 +65,13 @@ featured: false
 # icon: twitter
 
 url_pdf: 'publication/dispersion-spillover/dispersion-spillover.pdf' 
-url_code:
-url_dataset:
+url_code: 'https://osf.io/hvxje/'
+url_dataset: 'https://osf.io/hvxje/'
 url_poster:
 url_project:
 url_slides:
 url_source:
-url_video:
+url_video: 'https://www.youtube.com/watch?v=KhqY8D-8BLM'
 
 # Featured image
 
