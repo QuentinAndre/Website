@@ -364,7 +364,7 @@ part_values.head()
 
 To correct this, we need to merge those values with the original dataset on the column `part_id`.
 
-### c. Merging back the rest of the data
+### C. Merging back the rest of the data
 
 Before merging, we can also drop the columns "distribution" and "allocation", which are no longer needed.
 
