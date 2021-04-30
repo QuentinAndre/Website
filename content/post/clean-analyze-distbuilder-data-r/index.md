@@ -152,7 +152,7 @@ head(data, 5)
 
 Good! The raw allocation strings have now been converted to the actual distribution provided by participants.
 
-However, the data is in a nice shape: the data for each participant is stored as a list of number in a single column. Ideally, we’d like a format that we can use to do analysis and graphs.
+However, the data is not in a nice shape: the data for each participant is stored as a list of number in a single column. Ideally, we’d like a format that we can use to do analysis and graphs.
 
 ### B. Pivoting the distributions in long form
 
