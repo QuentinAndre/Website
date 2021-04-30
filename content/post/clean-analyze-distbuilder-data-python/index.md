@@ -1,15 +1,15 @@
 ---
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
-title: "Cleaning and Analyzing distBuilder Data"
+title: "Cleaning and Analyzing distBuilder Data in Python"
 subtitle: ""
 summary: "You have used the distBuilder library to collect data, now what? This post walks you through the basics
-of cleaning and analyzing distribution builder data."
+of cleaning and analyzing distribution builder data in Python."
 authors: [Quentin André]
 tags: [Numerical Cognition, Python, distBuilder, Tutorial]
 categories: []
 date: 2018-04-08
-lastmod: 2018-04-08
+lastmod: 2021-04-30
 featured: false
 draft: false
 toc: true
@@ -43,13 +43,16 @@ import statsmodels.formula.api as smf
 from scipy import stats
 ```
 
-You have just completed a simple distribution builder study on a Qualtrics. 
+**This tutorial is for R users. If you are using Python, check out [this other tutorial instead!](https://quentinandre.net/post/clean-analyze-distbuilder-data-r)**
+
+You have just completed a simple distribution builder study on a Qualtrics.
 
 * Participants have been randomly assigned to one of two conditions ("Low" or "High"), and have learned a distribution of numbers ranging from 11 to 20.
-* After learning the distribution, they had to predict the next 10 numbers that would appear in the distribution. 
+* After learning the distribution, they had to predict the next 10 numbers that would appear in the distribution.
 * To do so, they allocated 10 balls (representing the next 10 draws) to 10 buckets [11, 12, 13, 14, 15, 16, 17, 18, 19, 20] (representing the possible outcomes).
 
 Here is the data for the first five participants:
+
 
 ```python
 data = """part_id,condition,allocation
@@ -143,7 +146,7 @@ df.head()
 
 ## 1. Data Wrangling: Making the raw data usable
 
-If you look at the raw data from Qualtrics, you can see that the column "allocation" has stored the allocation provided by each participant. 
+If you look at the raw data from Qualtrics, you can see that the column "allocation" has stored the allocation provided by each participant.
 
 However, those allocations are not interpretable right now:
 1. The allocations are stored as a string (and not as a list of numbers).
@@ -153,15 +156,16 @@ Let's review how you should transform this data, and what you can do with it.
 
 The first step is to write a function and convert those allocations to distributions.
 
-### a. Converting the allocations into distributions
+### A. Converting the allocations into distributions
+
 
 ```python
 def convert_allocation_to_distribution(allocation, buckets):
     """
     Takes an allocation of balls to buckets, and a list of buckets.
     Return the corresponding distribution of values.
-    
-    Example: 
+
+    Example:
         buckets = [1, 2, 3, 4, 5]
         x = "0, 3, 1, 2, 1"
         dist = convert_allocation_to_distribution(x, buckets)
@@ -179,9 +183,10 @@ def convert_allocation_to_distribution(allocation, buckets):
 
 Now we apply this function to the column "allocation", specifying that the buckets ranged from 11 to 20.
 
+
 ```python
 df["distribution"] = df["allocation"].apply(
-    convert_allocation_to_distribution, 
+    convert_allocation_to_distribution,
     buckets=[11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
 )
 df.head()
@@ -256,13 +261,14 @@ df.head()
 
 
 
-Good! The raw allocation strings have now been converted to the actual distribution provided by participants. 
+Good! The raw allocation strings have now been converted to the actual distribution provided by participants.
 
 However, the data is in a nice shape: the data for each participant is stored as a list of number in a single column. Ideally, we'd like a format that we can use to do analysis and graphs.
 
-### b. Pivoting the distributions in long form
+### B. Pivoting the distributions in long form
 
 We are now going to reshape the data in long form, such that one record corresponds to one value entered by one participant.
+
 
 ```python
 part_values = (
@@ -272,6 +278,7 @@ part_values.columns = ["part_id", "value_index", "value"]
 ```
 
 Let's first check that we have the expected number of records:
+
 
 ```python
 display(HTML(f"""We have a total of {part_values.shape[0]} observations
@@ -284,6 +291,7 @@ We have a total of 200 observations
 
 
 Now if we inspect the head of the dataset...
+
 
 ```python
 part_values.head()
@@ -354,11 +362,12 @@ part_values.head()
 
 ...we see that we have the list of all values, but that we no longer have the participant-level information (such as the condition to which they were assigned).
 
-To correct this, we need to merge those values with the original dataset on the column `part_id`. 
+To correct this, we need to merge those values with the original dataset on the column `part_id`.
 
 ### c. Merging back the rest of the data
 
 Before merging, we can also drop the columns "distribution" and "allocation", which are no longer needed.
+
 
 ```python
 df_long = part_values.merge(
@@ -446,6 +455,7 @@ We are now ready for some visualization and statistical analysis.
 
 The first thing you can do is to inspect the distributions provided by the participants:
 
+
 ```python
 bins = np.arange(11, 21.1, 1)
 xticks = np.arange(11, 20.1, 1)
@@ -471,12 +481,15 @@ display(fig, metadata=dict(filename="Fig1"))
 ```
 
 
+    
 ![png](files/Fig1.png)
+    
 
 
 Those distributions look pretty random (because they were randomly generated), but at least we can see how each participant responded!
-  
+
 Note that we could also look at the distribution of responses by condition.
+
 
 ```python
 g = sns.FacetGrid(data=df_long, col="condition", hue="condition", height=4)
@@ -492,15 +505,18 @@ display(fig, metadata=dict(filename="Fig2"))
 ```
 
 
+    
 ![png](files/Fig2.png)
+    
 
 
 The visualization tells us the distribution within each condition, but we cannot compare the two conditions (unless you have the exact same number of participant in each condition).
 
 If if is not the case, we can visualize the mean number of balls in each bucket and each condition by applying a simple transformation:
 
+
 ```python
-med_values = (
+mean_values = (
     df_long.groupby(["part_id", "value", "condition"])
     .count()
     .reset_index()
@@ -508,8 +524,8 @@ med_values = (
     .mean()
     .reset_index()
 )
-med_values.columns = ["condition", "value", "mean"]
-med_values.head()
+mean_values.columns = ["condition", "value", "mean"]
+mean_values.head()
 ```
 
 
@@ -575,20 +591,21 @@ med_values.head()
 
 
 
+
 ```python
 g = sns.catplot(
     x="value",
     y="mean",
     hue="condition",
     hue_order=["Low", "High"],
-    data=med_values,
+    data=mean_values,
     kind="bar",
     ec="white",
     height=4,
     aspect=2,
     legend=False,
 )
-g.set_ylabels("Median Number of Balls")
+g.set_ylabels("Mean Number of Balls")
 g.set_xlabels("Bucket")
 g.add_legend(title="Condition")
 g.set_titles("Condition {col_name}")
@@ -598,23 +615,26 @@ display(fig, metadata=dict(filename="Fig3"))
 ```
 
 
+    
 ![png](files/Fig3.png)
+    
 
 
 ## 3. Analyzing properties of the distributions
 
-**The analysis of the data always depends on the research question.** 
+**The analysis of the data always depends on the research question.**
 
 So far, we have taken a descriptive approach to the data: We considered that we have collected 10 values from each participant, and have analyzed the data as such.
 
-However, we could have collected the data with the specific goal of testing people's beliefs about particular properties of the distribution: 
+However, we could have collected the data with the specific goal of testing people's beliefs about particular properties of the distribution:
 * We could be interested in what is the *average value* that people expect (i.e., the mean)
 * We could be interested in how *dispersed* participants expect the distribution to be (e.g., standard deviation).
 * We could be interested in how *skewed* they expect it to be...
 
-In that case, the relevant unit of analysis is the *statistics* computed at the distribution's level. 
+In that case, the relevant unit of analysis is the *statistics* computed at the distribution's level.
 
 We need to group the data by `part_id`, and compute the statistics of interest, to obtain one data point per participant.
+
 
 ```python
 df_agg = (
@@ -624,7 +644,7 @@ df_agg = (
     .aggregate(["mean", "std", "skew"])
     .reset_index()
     .merge(
-        df.drop(["allocation", "distribution"], axis=1), 
+        df.drop(["allocation", "distribution"], axis=1),
         on="part_id"
     )
 )
@@ -708,6 +728,7 @@ df_agg.head()
 
 We can now see if our condition had an impact on people's perceived mean of the distribution:
 
+
 ```python
 g = sns.catplot(x="condition", y="mean", data=df_agg)
 g.set_xlabels("Condition")
@@ -718,14 +739,16 @@ display(fig, metadata=dict(filename="Fig4"))
 ```
 
 
+    
 ![png](files/Fig4.png)
+    
 
 
 Here, we see that participants in the "Low" condition reported a significantly lower mean that participants in the "High" condition (which is exactly how I created the data, so not so surprising...).
 
-## 3. Wrapping up
+## 4. Wrapping up
 
-We have seen how to convert the raw data generated by distBuilder to a standard long form dataset. 
+We have seen how to convert the raw data generated by distBuilder to a standard long form dataset.
 
 A few words of caution to finish:
 * Always check that the list of buckets you use in the analysis matches the list of buckets that was shown to participants.
