@@ -43,7 +43,7 @@ import statsmodels.formula.api as smf
 from scipy import stats
 ```
 
-**This tutorial is for R users. If you are using Python, check out [this other tutorial instead!](https://quentinandre.net/post/clean-analyze-distbuilder-data-r)**
+**This tutorial is for Python users. If you are using R, check out [this other tutorial instead!](https://quentinandre.net/post/clean-analyze-distbuilder-data-r)**
 
 You have just completed a simple distribution builder study on a Qualtrics.
 
