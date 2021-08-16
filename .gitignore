@@ -7,3 +7,4 @@ public/
 
 # Misc
 .ipynb_checkpoints
+*.ipynb
