@@ -215,7 +215,7 @@ It is very important to select the appropriate statistical results when conducti
 Let's break down a p-curve analysis together, taking a recent paper as an example:
 
     
-![png](files/7)
+![png](files/Fig7.png)
     
 
 
