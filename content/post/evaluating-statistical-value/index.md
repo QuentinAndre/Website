@@ -227,10 +227,6 @@ Let's break down a p-curve analysis together, taking a recent paper as an exampl
     Test of Flatness vs. 33% Power     p = 0.246  Z=-1.60, p = 0.0553  Z=1.98, p = 0.9761
 
 
-
-    <Figure size 432x288 with 0 Axes>
-
-
 The p-curve app displays different outputs.
 
 1. First, we see the p-curve chart. The p-curve chart displays the following distributions:
@@ -263,9 +259,6 @@ Let's look at a second paper now.
     Test of Right-Skewness            p = 0.1445  Z=-3.89, p < .0001  Z=-3.67, p = 0.0001
     Test of Flatness vs. 33% Power    p = 0.7183  Z=1.81, p = 0.9647    Z=4.04, p > .9999
 
-
-
-    <Figure size 432x288 with 0 Axes>
 
 
 This one looks much better! The p-curve is appropriately right-skewed, and the estimated power is high. This should give us confidence that the phenomenon reported in the paper would replicate.
