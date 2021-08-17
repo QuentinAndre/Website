@@ -33,17 +33,6 @@ projects: []
 
 *It starts with a refresher on the p-value and null-hypothesis significance testing (NHST), and then offers guidelines on how to evaluate the amount of statistical evidence presented in a single study, and in a set of studies.*
 
-
-```python
-import matplotlib.pyplot as plt
-import numpy as np
-import pandas as pd
-import pypcurve as ppc
-import scipy.stats as stats
-import seaborn as sns
-from IPython.display import HTML, display
-```
-
 ## A Refresher on Null-Hypothesis Significance Testing
 
 ### What is a p-value? 
@@ -74,33 +63,6 @@ $$t = \frac{\bar{X}_1 - \bar{X}_2}{\sqrt{\frac{s_{X_1}^2+s_{X_2}^2}{N/2}}} \sim 
 As proof, let's simulate the distribution of t-values that we would get across a very large number of simulated "experiments" in which the null hypothesis is true (i.e., both samples are drawn from an identical population):
 
 
-```python
-np.random.seed(53894034)
-g1 = np.random.normal(0, 1, size=(100000, 50))  # 100,000 samples of size 50
-g2 = np.random.normal(0, 1, size=(100000, 50))  # 100,000 samples of size 50
-diff = (g1 - g2).mean(axis=1)  # Mean difference
-tstat = diff / np.sqrt(
-    (g1.std(ddof=1, axis=1) ** 2 + g2.std(ddof=1, axis=1) ** 2) / 50
-)  # t-stats
-
-# Plotting the results
-fig, ax = plt.subplots(1, 1)
-bins = np.linspace(-4, 4, 50)
-ax.hist(tstat, bins=bins, label="Simulated draws", density=True)
-x = np.linspace(-4, 4, 1000)
-y = stats.t(98).pdf(x)
-ax.plot(x, y, label="t(98)")
-plt.legend(frameon=False)
-sns.despine()
-ax.set_xlabel("t-value")
-ax.set_ylabel("Density")
-sns.despine()
-fig = plt.gcf()
-plt.close()
-display(fig, metadata=dict(filename="Fig1"))
-```
-
-
     
 ![png](files/Fig1.png)
     
@@ -115,17 +77,6 @@ Knowing the distribution of results that we should expect to get when the null h
 Again, let's use a difference of means as an example:
 
 
-```python
-np.random.seed(53894034)
-g1 = np.random.normal(0, 1, 50)
-g2 = np.random.normal(0, 1, 50)
-diff = (g1 - g2).mean()
-tstat = diff / np.sqrt((g1.std(ddof=1) ** 2 + g2.std(ddof=1) ** 2) / 50)
-display(HTML(f"The mean difference between the two groups is {diff:.2f}"))
-display(HTML(f"The t-value is {tstat:.2f}."))
-```
-
-
 The mean difference between the two groups is -0.25
 
 
@@ -136,45 +87,10 @@ The t-value is -1.27.
 How extreme is this difference? To answer this question, we can observe the theoretical distribution under the null, and check how often we would encounter a value at least that extreme as 1.27.
 
 
-```python
-fig, ax = plt.subplots(1, 1)
-x = np.linspace(-4, 4, 1000)
-y = stats.t(98).pdf(x)
-ax.plot(x, y)
-ax.axvline(tstat, ls=":")
-ax.annotate(f"t = {tstat:.2f}", (-2.2, 0.25), ha="center")
-ax.axvline(-tstat, ls=":")
-ax.annotate(f"t = {-tstat:.2f}", (2.2, 0.25), ha="center")
-ax.set_xlabel("t-value")
-ax.set_ylabel("Density")
-ax.set_ylim(0, 0.4)
-tlow = np.linspace(-4, tstat, 1000)
-thigh = np.linspace(-tstat, 4, 1000)
-ax.fill_between(tlow, stats.t(98).pdf(tlow), color="orange")
-ax.fill_between(thigh, stats.t(98).pdf(thigh), color="orange")
-sns.despine()
-fig = plt.gcf()
-plt.close()
-display(fig, metadata=dict(filename="Fig2"))
-```
-
-
     
 ![png](files/Fig2.png)
     
 
-
-
-```python
-display(
-    HTML(
-        f"Graphically, we see that values more extreme than {np.abs(tstat):.2f} (in absolute value) are relatively common. "
-        f"In fact, we would expect to see a value more extreme {stats.t(98).cdf(tstat)*200:.1f}% "
-        f"of the time. <br> We write p = {stats.t(98).cdf(tstat)*2:.3f}, and conclude that this result would not be too unexpected "
-        "if the null hypothesis were true."
-    )
-)
-```
 
 
 Graphically, we see that values more extreme than 1.27 (in absolute value) are relatively common. In fact, we would expect to see a value more extreme 20.6% of the time. <br> We write p = 0.206, and conclude that this result would not be too unexpected if the null hypothesis were true.
@@ -231,23 +147,6 @@ The first p-curve we are going to cover is the p-curve under the null: The distr
 It is also the simplest p-curve because it is uniform. See for yourself:
 
 
-```python
-np.random.seed(53894034)
-g1 = np.random.normal(0, 1, size=(1000000, 50))  # 1,000,000 samples of size 50
-g2 = np.random.normal(0, 1, size=(1000000, 50))  # 1,000,000 samples of size 50
-_, pvals = stats.ttest_ind(g1, g2, axis=1)
-pvals_sig = pvals[pvals < 0.05]  # Only sig. p-values
-fig, ax = plt.subplots(1)
-ax.hist(pvals_sig, bins=np.linspace(0, 0.05, 100), density=True)
-ax.set_xlabel("p-value")
-ax.set_ylabel("Density")
-sns.despine()
-fig = plt.gcf()
-plt.close()
-display(fig, metadata=dict(filename="Fig3"))
-```
-
-
     
 ![png](files/Fig3.png)
     
@@ -270,50 +169,6 @@ When the null-hypothesis is no longer true (e.g., when two groups are not sample
 Let's visualize this below:
 
 
-```python
-np.random.seed(53894034)
-g1 = np.random.normal(0, 1, size=(1000000, 50))  # 1,000,000 samples of size 50
-g2 = np.random.normal(0, 1, size=(1000000, 50))  # 1,000,000 samples of size 50
-g3 = np.random.normal(0.15, 1, size=(1000000, 50))
-g4 = np.random.normal(0.33, 1, size=(1000000, 50))
-_, pvalsg1g2 = stats.ttest_ind(g1, g2, axis=1)
-_, pvalsg1g3 = stats.ttest_ind(g1, g3, axis=1)
-_, pvalsg1g4 = stats.ttest_ind(g1, g4, axis=1)
-pvals_g1g2_sig = pvalsg1g2[pvalsg1g2 < 0.05]  # Only sig. p-values
-pvals_g1g3_sig = pvalsg1g3[pvalsg1g3 < 0.05]  # Only sig. p-values
-pvals_g1g4_sig = pvalsg1g4[pvalsg1g4 < 0.05]  # Only sig. p-values
-fig, ax = plt.subplots(1)
-ax.hist(
-    pvals_g1g2_sig,
-    bins=np.linspace(0, 0.05, 100),
-    density=True,
-    histtype="step",
-    label="Null",
-)
-ax.hist(
-    pvals_g1g3_sig,
-    bins=np.linspace(0, 0.05, 100),
-    density=True,
-    histtype="step",
-    label="10% Power",
-)
-ax.hist(
-    pvals_g1g4_sig,
-    bins=np.linspace(0, 0.05, 100),
-    density=True,
-    histtype="step",
-    label="33% Power",
-)
-ax.set_xlabel("p-value")
-ax.set_ylabel("Density")
-plt.legend(frameon=False)
-sns.despine()
-fig = plt.gcf()
-plt.close()
-display(fig, metadata=dict(filename="Fig4"));
-```
-
-
     
 ![png](files/Fig4.png)
     
@@ -330,40 +185,6 @@ Finally, there is a third type of p-curve to consider: What happens if the null 
 Here, we consider a very minor form of p-hacking: Researchers run a study with two DVs correlated at .9, and report the second DV if the first one does not reach statistical significance.
 
 
-```python
-np.random.seed(53894034)
-g1 = np.random.multivariate_normal(
-    mean=[0, 0], cov=[[1, 0.9], [0.9, 1]], size=(1000000, 50)
-)  # Two DVs, correlated at .9
-g2 = np.random.multivariate_normal(
-    mean=[0, 0], cov=[[1, 0.9], [0.9, 1]], size=(1000000, 50)
-)
-_, p = stats.ttest_ind(g1, g2, axis=1)  # raw p-values
-phacked = np.fromiter(
-    map(lambda x: x[0] if x[0] <= 0.05 else x[1], p), dtype=float
-)  # Researchers p-hack
-fig, ax = plt.subplots(1)
-ax.hist(
-    p[:, 0], bins=np.linspace(0, 0.05, 100), density=True, histtype="step", label="Null"
-)
-ax.hist(
-    phacked,
-    bins=np.linspace(0, 0.05, 100),
-    density=True,
-    histtype="step",
-    label="p-hacked",
-)
-ax.set_xlabel("p-value")
-ax.set_ylabel("Density")
-ax.set_ylim(0, 30)
-plt.legend(frameon=False)
-sns.despine()
-fig = plt.gcf()
-plt.close()
-display(fig, metadata=dict(filename="Fig5"))
-```
-
-
     
 ![png](files/Fig5.png)
     
@@ -374,30 +195,6 @@ Here we see that the p-curve is no longer uniform: It is left-skewed!
 The intuition behind this result is simple: The p-values that were slightly above .05 (e.g., .065) were "pushed" to the "significant" side, adding some weight to the left side of .05. 
 
 In this simulated experiment, we have access to all the p-values (and not only to the significant ones), so we can easily see it below:
-
-
-```python
-fig, ax = plt.subplots(1)
-ax.hist(
-    p[:, 0], bins=np.linspace(0, 0.2, 100), density=True, histtype="step", label="Null"
-)
-ax.hist(
-    phacked,
-    bins=np.linspace(0, 0.2, 100),
-    density=True,
-    histtype="step",
-    label="p-hacked",
-)
-ax.set_xlabel("p-value")
-ax.set_ylabel("Density")
-ax.set_ylim(0, 9)
-ax.axvline(0.05, color="black", ls=":")
-plt.legend(frameon=False)
-sns.despine()
-fig = plt.gcf()
-plt.close()
-display(fig, metadata=dict(filename="Fig6"))
-```
 
 
     
@@ -417,23 +214,8 @@ It is very important to select the appropriate statistical results when conducti
 
 Let's break down a p-curve analysis together, taking a recent paper as an example:
 
-
-```python
-df = pd.read_excel("Data.xlsx").dropna(subset=["Test"]).query("Title == 'A'")
-pc = ppc.PCurve(df.Test)
-pc.summary()
-fig = plt.gcf()
-plt.close()
-display(fig, metadata=dict(filename="Fig7"))
-```
-
-    pypcurve v. 0.1.0 is based on Uri Simonsohn's P-Curve's app v. 4.06.
     
-
-
-
-    
-![png](files/Fig7.png)
+![png](files/7)
     
 
 
@@ -468,22 +250,6 @@ Here, you can see that the p-curve for this paper does not look great: It looks 
 This should give us little confidence in the phenomenon described in the paper: The experiments do not have nearly enough power to detect the phenomenon (if the phenomenon exists).
 
 Let's look at a second paper now.
-
-
-```python
-title = "B"
-df = pd.read_excel("Data.xlsx").dropna(subset=["Test"]).query("Title == @title")
-pc = ppc.PCurve(df.Test)
-pc.summary()
-fig = plt.gcf()
-plt.close()
-display(fig, metadata=dict(filename="Fig8"))
-```
-
-    pypcurve v. 0.1.0 is based on Uri Simonsohn's P-Curve's app v. 4.06.
-    
-
-
 
     
 ![png](files/Fig8.png)
