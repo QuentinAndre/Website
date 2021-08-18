@@ -58,7 +58,7 @@ From these assumptions, statisticians are able to derive the *theoretical distri
 
 For instance, when the assumptions of the t-test are met, the statistics t (corresponding to the difference between groups, scaled by the standard error of the mean) follows a t-distribution with N-2 degrees of freedom:
 
-$$t = \frac{\bar{X}_1 - \bar{X}_2}{\sqrt{\frac{s_{X_1}^2+s_{X_2}^2}{N/2}}} \sim \mathcal{t}(N-2)$$
+$$t = \frac{\bar{X}\_1 - \bar{X}\_2}{\sqrt{\frac{s\_{X\_1}^2+s\_{X\_2}^2}{N/2}}} \sim \mathcal{t}(N-2)$$
 
 As proof, let's simulate the distribution of t-values that we would get across a very large number of simulated "experiments" in which the null hypothesis is true (i.e., both samples are drawn from an identical population):
 
