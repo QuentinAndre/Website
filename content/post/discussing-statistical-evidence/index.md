@@ -62,8 +62,9 @@ often than they should.
 
 ## Why So Awkward?
 
-Why don't we simply discuss the strength of statistical evidence as we would discuss other aspects of papers? In my view, 
-it is because "weak statistical evidence" rhymes has become associated with "questionable research practices." 
+Why can we easily discuss issues in theories, measures, or experimental design, but shy away from pointing out inadequate 
+statistical evidence when we see it? In my view, it is because "weak statistical evidence" is often associated, 
+in people's mind, with "questionable research practices." 
 
 Regardless of the truth of this association, it is unhelpful: it turns any discussion of statistical evidence
 into a personal attack on the researcher. As a consequence, when Reviewer 2 writes "I don't think that the paper presents 
