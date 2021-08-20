@@ -8,7 +8,7 @@ in papers? This post offers some personal reflections on this complex question."
 authors: [Quentin André]
 tags: [Tutorial]
 categories: []
-date: 2021-08-19
+date: 2021-08-18
 lastmod: 2021-08-19
 featured: false
 draft: false
