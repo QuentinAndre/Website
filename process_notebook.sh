@@ -2,6 +2,9 @@
 if [ $2 -eq 1 ]
 then
 jupyter nbconvert --to markdown  "$1/notebook.ipynb" --template codecellhider
+elif [ $2 -eq 2 ]
+then
+jupyter nbconvert --to markdown  "$1/notebook.ipynb" --no-prompt --no-input
 else
 jupyter nbconvert --to markdown  "$1/notebook.ipynb"
 fi
