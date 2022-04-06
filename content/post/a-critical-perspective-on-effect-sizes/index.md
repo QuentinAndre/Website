@@ -66,7 +66,7 @@ Let's see why and how.
 
 ### Some effect sizes directly give us the amount of variance explained
 
-Imagine that respondents, in an experiment, have a certain WTP for a good. The average WTP is $10, with a variance  $\sigma^2=1$. 
+Imagine that respondents, in an experiment, have a certain WTP for a good. The average WTP is 10 dollars, with a variance of $\sigma^2=1$. 
 
 
     
@@ -82,7 +82,7 @@ F(6, 993)=0.74, p = 0.615, $\eta^2$ = 0.004
 
 Our statistical software show an $\eta^2$ of 0.004. 
 
-The interpretation of $eta^2$ is very simple: It directly tells us the amount of variance explained by the predictor, which means here that Agreeableness explains .4% of the variance in WTP. 
+The interpretation of $\eta^2$ is very simple: It directly tells us the amount of variance explained by the predictor, which means here that Agreeableness explains .4% of the variance in WTP. 
 
 We can easily visualize this (lack of) impact on a graph. For clarity, I have overlaid the overall WTP (in blue).
 
@@ -96,7 +96,7 @@ We can see that:
 * The variance explained by Agreeableness is quasi-null: People at low (vs. high) levels of agreeableness have the same WTP
 * As a consequence, the residual variance in WTP at any given level of Agreableness is equal to the overall amount of variance
 
-Now, what happens when we instead consider a strong predictor of WTP: Financial constraints? Again, here's the ANOVA:
+Now, what happens when we instead consider a very strong predictor of WTP: Financial constraints? Again, here's the ANOVA:
 
 
 F(7, 992)=225.30, p < .001, $\eta^2$ = 0.614
@@ -114,7 +114,7 @@ If we plot their relationship, we can indeed see this strong association:
 * The variance explained by Financial Constraints is very high: People at low (vs. high) levels of Financial Constraints have a much lower (vs. higher) WTP.
 * As a consequence, the residual variance in WTP at any given level of Financial Constraints is much smaller than the overall amount of variance.
 
-For now, let's remember this: $\eta^2$, $\eta^2_p$, $\epsilon_p$, $\epsilon^2_p$, $\omega^2$ and $\omega^2_p$ all tell us (roughly) the amount of variance explained by a predictor.
+For now, let's remember this: $\eta^2$, $\eta^2_p$, $\epsilon_p$, $\epsilon^2_p$, $\omega^2$ and $\omega^2_p$ all tell us (roughly) the percentage of the variance in a phenomenon that is explained by a predictor.
 
 ### Others also tell us the amount of variance explained, but indirectly!
 
@@ -232,7 +232,7 @@ Suppose four different groups of researcher are studying an effect that has a tr
 * Group 3 runs even fewer participants, such that they have 30% power.
 * Group 2 runs very small groups of participants, such that they only have 10% power.
 
-Of course (☹), the researchers only report the studies that 'worked' and found significant results. What is the effect size that each group will find?
+Of course (☹), the researchers only report the studies that 'worked' and found significant results. What is the effect size that each group will find **in the studies that they report**?
 
 
     
@@ -240,7 +240,7 @@ Of course (☹), the researchers only report the studies that 'worked' and found
     
 
 
-The average observed effect size of the first group, who has 90% power, is very close to the "true" effect size ($\eta^2$ = .012 vs $\eta^2$ = .01). On the other hand, the fourth group, who has 10% power, overestimates the effect size by a factor of 12 ($\eta^2$ = .128 vs $\eta^2$ = .01)!
+The average observed effect size of the first group, who has 90% power, is very close to the "true" effect size ($\eta^2$ = .012 vs $\eta^2$ = .01). On the other hand, the fourth group, who has 10% power, overestimates the effect size by a factor of more than 12 ($\eta^2$ = .128 vs $\eta^2$ = .01)!
 
 In a nutshell, effect sizes are only informative if the studies are properly powered. As a heuristic:
 * The closer the p-value of the study is to .05, the less likely it is that the effect size is informative.
@@ -287,7 +287,7 @@ These three examples are some of the largest effect sizes reported in the paper:
 
 However, effect sizes from papers are not always great benchmarks. Not only because they are likely overestimated (as we have discussed earlier), but also because they themselves like context!
 
-Suppose a meta-analysis says that being pricked by a needle has an effect size of $\eta^2 = .30$ on self-reported pain. But how big was the needle? How often were people pricked? Was the population relatively homogenous in pain level at baseline (e.g., a sample of undergraduates), or was it heterogeneous (e.g., the general population)? All these factors are going to lead to dramatic differences in effect sizes.
+Suppose a meta-analysis says that being pricked by a needle has an effect size of $\eta^2$ = .30 on self-reported pain. But how big was the needle? How often were people pricked? Was the population relatively homogenous in pain level at baseline (e.g., a sample of undergraduates), or was it heterogeneous (e.g., the general population)? All these factors are going to lead to dramatic differences in effect sizes.
 
 What are the alternatives then?
 
@@ -352,7 +352,14 @@ Some effect sizes are simply too large. I would be extremely distrustful of some
 
 $$F(1, 58) = 81.36, p < .001, \eta^2 = .558.$$
 
-It is an example of a result that I consider simply impossible. A contextual manipulation (whatever that is) cannot explain more than 50% of the variance in a phenomenon as multiply determined as WTP. If it were the case, Plato or Aristotle would have written about it, and companies all around the world would manipulate it: It wouldn't be a "novel finding" in a marketing journal. Even manipulation checks typically have smaller effect sizes.
+It is an example of a result that I consider simply impossible. A contextual manipulation (whatever that is) cannot explain more than 50% of the variance in a phenomenon as multiply determined as WTP. If an effect this large existed, Plato or Aristotle would have written about it, and companies all around the world would rely on it everyday: It wouldn't be a "novel finding" in a marketing journal. Even manipulation checks typically have smaller effect sizes.
 
 
 A mismatch between the expected and actual effect size might be the sign of a mistake, of an experimental confound, of something more nefarious... or simply that these heuristics sometimes fail! In any case, an effect size that doesn't pass these "common sense" should lead readers and reviewers to ask more questions.
+
+## Some Helpful References
+
+* [Richard, Bond, and Stokes-Zoota's "One Hundred Years of Social Psychology Quantitatively Described"](doi.org/10.1037/1089-2680.7.4.331)
+* [Eisend's "Meta-Meta-Analysis" of marketing effect sizes (the marketing equivalent of Richard et al. 2003)](doi.org/10.1509/jm.14.0288)
+* [Joe Simmons' effect size estimates of tautological effects (e.g., "People who like eggs eat egg salad more often")](http://datacolada.org/18)
+* [Joe Simmons' talk at SPSP 2020: "How can you tell the difference between a true finding and a false finding?"](https://youtu.be/ny-NAgYiYIs)
