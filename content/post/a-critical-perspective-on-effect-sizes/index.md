@@ -33,11 +33,11 @@ projects: []
 
 *I start with a quick refresher on what effect sizes are, discuss the conditions under which effect sizes contain useful information, and conclude by offering some heuristics to evaluate effect sizes.*
 
-Over the past decade, a growing number of marketing journals have started recommending (or even requiring) that authors the effect sizes associated with their statistical test. 
+Over the past decade, a growing number of marketing journals have started recommending (or even requiring) that authors report the effect sizes associated with their statistical test. 
 
-In their 2016 editorial, the previous editorial team of the Journal of Consumer Research justified this decision as follow: "We believe that transparent and full reporting will enable others to understand the research and weight of evidence for the research findings" (Inman et al., 2016).
+The previous editorial team of the Journal of Consumer Research justified this decision as follow: "We believe that transparent and full reporting will enable others to understand the research and weight of evidence for the research findings" (Inman et al., 2016).
 
-While I enthusiastically agree with the decision and with the rationale, it is not straightforward to me that effect sizes always allow researchers to "understand the [...] weight of evidence for the research findings". Specifically, I believe that effects sizes are only helpful if they are:
+While I enthusiastically agree with the decision and with the rationale, it is not straightforward that effect sizes always allow researchers to "understand the [...] weight of evidence for the research findings". Specifically, I believe that effects sizes are only helpful if they are:
 * Understood
 * Informative
 * Contextualized
@@ -69,7 +69,9 @@ Let's see why and how.
 Imagine that respondents, in an experiment, have a certain WTP for a good. The average WTP is $10, with a variance  $\sigma^2=1$. 
 
 
+    
 ![png](files/Fig1.png)
+    
 
 
 Now, consider a predictor that would be unrelated to this WTP: Agreeableness. Here's the ANOVA of Agreeableness on WTP:
@@ -85,7 +87,9 @@ The interpretation of $eta^2$ is very simple: It directly tells us the amount of
 We can easily visualize this (lack of) impact on a graph. For clarity, I have overlaid the overall WTP (in blue).
 
 
+    
 ![png](files/Fig2.png)
+    
 
 
 We can see that:
@@ -101,7 +105,9 @@ F(7, 992)=225.30, p < .001, $\eta^2$ = 0.614
 It has an $\eta^2$ of 0.614, which again means Financial Constraints explain 61.4% of the variance in WTP. 
 
 
+    
 ![png](files/Fig3.png)
+    
 
 
 If we plot their relationship, we can indeed see this strong association:
@@ -121,7 +127,9 @@ $$d = \frac{M_1-M_2}{\sigma_{pooled}}$$
 See below for a visual illustration of a Cohen's d = 1.5:
 
 
+    
 ![png](files/Fig4.png)
+    
 
 
 The difference in WTP between the two conditions is \\$1.5, and the pooled standard deviation is \\$1, which gives us a Cohen's d of 1.5.
@@ -129,7 +137,9 @@ The difference in WTP between the two conditions is \\$1.5, and the pooled stand
 This might not be immediately obvious, but we can also express this relationship as a fraction of variance explained, as shown in the graph below:
 
 
+    
 ![png](files/Fig5.png)
+    
 
 
 This graph clearly shows how a Cohen's d relates to the fraction of variance explained: 
@@ -187,7 +197,9 @@ However, we cannot conclude anything from this variability. Why?
 Let's plot the effect sizes against sample sizes:
 
 
+    
 ![png](files/Fig6.png)
+    
 
 
 We observe a curious pattern: The experiments with smaller sample sizes produced larger effects, and the experiments with larger sample sizes produced smaller effects... But why?
@@ -199,7 +211,9 @@ If you go back to the statistical results, you'll notice that all the p-values a
 Again, it will become clear on the graph below:
 
 
+    
 ![png](files/Fig7.png)
+    
 
 
 This graph shows, for a given sample size, the required effect sizes to observe p = .05 (in blue) or p = .05 (in orange). As you can see, the effect sizes of these experiments closely track the blue line. 
@@ -221,7 +235,9 @@ Suppose four different groups of researcher are studying an effect that has a tr
 Of course (☹), the researchers only report the studies that 'worked' and found significant results. What is the effect size that each group will find?
 
 
+    
 ![png](files/Fig8.png)
+    
 
 
 The average observed effect size of the first group, who has 90% power, is very close to the "true" effect size ($\eta^2$ = .012 vs $\eta^2$ = .01). On the other hand, the fourth group, who has 10% power, overestimates the effect size by a factor of 12 ($\eta^2$ = .128 vs $\eta^2$ = .01)!
@@ -299,7 +315,9 @@ $$\text{Portion Size} \sim \text{OrderingMode} + \text{HungerLevel} + \text{Diet
 The graph below presents the effect sizes and 95% CI of the three variables: Ordering Mode, Dieting Status, and Hunger.
 
 
+    
 ![png](files/Fig9.png)
+    
 
 
 This graph shows that:
@@ -322,7 +340,7 @@ We can and should apply such skepticism to effect sizes that we see in papers. H
 
 1. Intuition
 
-The advantage of marketing and psychology over say, physics or chemistry, is that we often have personal experience with the research questions. As such, if a study reports an effect that explains more than 10% of the variance in a phenomenon, we should most of the time have *some* intuition for it after we learn about it.  With exceptions, we can tell if a finding resonate with our experience or if it doesn't.
+The advantage of marketing and psychology over say, physics or chemistry, is that we often have personal experience with the research questions. As such, if a study reports an effect that explains more than 10% of the variance in a phenomenon, we should most of the time have *some* intuition for the effect after we learn about it.  With a few exceptions, we can tell if a finding resonate with our experience or if it doesn't.
 
 2. Proportionality
 
