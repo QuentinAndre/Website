@@ -363,3 +363,4 @@ A mismatch between the expected and actual effect size might be the sign of a mi
 * [Eisend's "Meta-Meta-Analysis" of marketing effect sizes (the marketing equivalent of Richard et al. 2003)](doi.org/10.1509/jm.14.0288)
 * [Joe Simmons' effect size estimates of tautological effects (e.g., "People who like eggs eat egg salad more often")](http://datacolada.org/18)
 * [Joe Simmons' talk at SPSP 2020: "How can you tell the difference between a true finding and a false finding?"](https://youtu.be/ny-NAgYiYIs)
+* [Joe Hilgard's 'Maximum Positive Control': An experimental approach to estimate the largest effect an experiment can produce](https://doi.org/10.1016/j.jesp.2020.104082)
