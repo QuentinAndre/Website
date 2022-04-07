@@ -69,9 +69,7 @@ Let's see why and how.
 Imagine that respondents, in an experiment, have a certain WTP for a good. The average WTP is 10 dollars, with a variance of $\sigma^2=1$. 
 
 
-    
 ![png](files/Fig1.png)
-    
 
 
 Now, consider a predictor that would be unrelated to this WTP: Agreeableness. Here's the ANOVA of Agreeableness on WTP:
@@ -87,9 +85,7 @@ The interpretation of $\eta^2$ is very simple: It directly tells us the amount o
 We can easily visualize this (lack of) impact on a graph. For clarity, I have overlaid the overall WTP (in blue).
 
 
-    
 ![png](files/Fig2.png)
-    
 
 
 We can see that:
@@ -105,9 +101,7 @@ F(7, 992)=225.30, p < .001, $\eta^2$ = 0.614
 It has an $\eta^2$ of 0.614, which again means Financial Constraints explain 61.4% of the variance in WTP. 
 
 
-    
 ![png](files/Fig3.png)
-    
 
 
 If we plot their relationship, we can indeed see this strong association:
@@ -127,19 +121,15 @@ $$d = \frac{M_1-M_2}{\sigma_{pooled}}$$
 See below for a visual illustration of a Cohen's d = 1.5:
 
 
-    
 ![png](files/Fig4.png)
-    
 
 
-The difference in WTP between the two conditions is \\$1.5, and the pooled standard deviation is \\$1, which gives us a Cohen's d of 1.5.
+The difference in WTP between the two conditions is 1.5 dollars, and the pooled standard deviation is 1, which gives us a Cohen's d of 1.5.
 
 This might not be immediately obvious, but we can also express this relationship as a fraction of variance explained, as shown in the graph below:
 
 
-    
 ![png](files/Fig5.png)
-    
 
 
 This graph clearly shows how a Cohen's d relates to the fraction of variance explained: 
@@ -197,9 +187,7 @@ However, we cannot conclude anything from this variability. Why?
 Let's plot the effect sizes against sample sizes:
 
 
-    
 ![png](files/Fig6.png)
-    
 
 
 We observe a curious pattern: The experiments with smaller sample sizes produced larger effects, and the experiments with larger sample sizes produced smaller effects... But why?
@@ -211,12 +199,10 @@ If you go back to the statistical results, you'll notice that all the p-values a
 Again, it will become clear on the graph below:
 
 
-    
 ![png](files/Fig7.png)
-    
 
 
-This graph shows, for a given sample size, the required effect sizes to observe p = .05 (in blue) or p = .05 (in orange). As you can see, the effect sizes of these experiments closely track the blue line. 
+This graph shows, for a given sample size, the required effect sizes to observe p = .05 (in blue) or p = .01 (in orange). As you can see, the effect sizes of these experiments closely track the blue line. 
 
 It is an important insight. If researchers "p-hack" their results until they cross the significance threshold, the effect sizes that they report do not contain any information: They simply repeat the sample size.
 
@@ -235,9 +221,7 @@ Suppose four different groups of researcher are studying an effect that has a tr
 Of course (☹), the researchers only report the studies that 'worked' and found significant results. What is the effect size that each group will find **in the studies that they report**?
 
 
-    
 ![png](files/Fig8.png)
-    
 
 
 The average observed effect size of the first group, who has 90% power, is very close to the "true" effect size ($\eta^2$ = .012 vs $\eta^2$ = .01). On the other hand, the fourth group, who has 10% power, overestimates the effect size by a factor of more than 12 ($\eta^2$ = .128 vs $\eta^2$ = .01)!
@@ -252,14 +236,14 @@ Consider the following statistical result:
 
 ***Consistent with H1, we find that our manipulation had an impact on people's WTP: F(1, 58) = 81.36, p < .001, $\eta^2$ = .558.***
 
-After we have discussed, we know how to interpret the effect size (it means that the IV explains 55.8% of the variance in the DV), and we know that it is likely informative (the p-value is smaller than .001, which makes p-hacking implausible, and suggests decent power to detect the effect).
+After our discussion, we know how to interpret the effect size (it means that the IV explains 55.8% of the variance in the DV), and we know that it is likely informative (the F-value is really large, which makes p-hacking implausible, and suggests decent power to detect an effect).
 
 However, we are still missing one crucial element: Reference points against which to interpret this value. I'll offer three ways researchers can use to contextualize effect sizes.
 
 
 ### Using external benchmarks
 
-The most straighforward way to contextualize effect sizes is to compare them to a few real-life phenonenon. This [twitter thread from Brian Nosek](https://twitter.com/BrianNosek/status/1416427265118908419) has a lot of great examples:
+The most straighforward way to contextualize effect sizes is to compare them to a few real-life phenonenon. This [twitter thread from Brian Nosek](https://twitter.com/BrianNosek/status/1416427265118908419) has a lot of great examples (to interpret the effect sizes r as a percentage of variance explained, simply square it: r = .6 means $\eta^2$ = .36):
 * Gender explains 45% of the variance in height in humans
 * In the US, distance to the equator explains 36% of the variance in average daily temperature.
 * Height explains 19% of the variance in weight in humans
@@ -285,7 +269,7 @@ $\eta^2$ = .209
 <br/>
 These three examples are some of the largest effect sizes reported in the paper: They find that 95% of the effects are smaller than $\eta^2$ = .25.
 
-However, effect sizes from papers are not always great benchmarks. Not only because they are likely overestimated (as we have discussed earlier), but also because they themselves like context!
+However, effect sizes from papers are not always great benchmarks. Not only because they are likely overestimated (as we have discussed earlier), but also because they themselves lack context!
 
 Suppose a meta-analysis says that being pricked by a needle has an effect size of $\eta^2$ = .30 on self-reported pain. But how big was the needle? How often were people pricked? Was the population relatively homogenous in pain level at baseline (e.g., a sample of undergraduates), or was it heterogeneous (e.g., the general population)? All these factors are going to lead to dramatic differences in effect sizes.
 
@@ -315,9 +299,7 @@ $$\text{Portion Size} \sim \text{OrderingMode} + \text{HungerLevel} + \text{Diet
 The graph below presents the effect sizes and 95% CI of the three variables: Ordering Mode, Dieting Status, and Hunger.
 
 
-    
 ![png](files/Fig9.png)
-    
 
 
 This graph shows that:
@@ -359,8 +341,12 @@ A mismatch between the expected and actual effect size might be the sign of a mi
 
 ## Some Helpful References
 
-* [Richard, Bond, and Stokes-Zoota's "One Hundred Years of Social Psychology Quantitatively Described"](doi.org/10.1037/1089-2680.7.4.331)
-* [Eisend's "Meta-Meta-Analysis" of marketing effect sizes (the marketing equivalent of Richard et al. 2003)](doi.org/10.1509/jm.14.0288)
+* [An online effect size calculator and converter](https://www.psychometrica.de/effect_size.html)
+* [A visual interpretation of the Cohen's d, and some of its "intuitive" interpretations](https://rpsychologist.com/cohend/)
+* [Richard, Bond, and Stokes-Zoota's "One Hundred Years of Social Psychology Quantitatively Described"](https://doi.org/10.1037/1089-2680.7.4.331)
+* [Eisend's "Meta-Meta-Analysis" of marketing effect sizes (the marketing equivalent of Richard et al. 2003)](https://doi.org/10.1509/jm.14.0288)
+* [Brian Nosek's Twitter thread on effect sizes](https://twitter.com/BrianNosek/status/1416427265118908419)
 * [Joe Simmons' effect size estimates of tautological effects (e.g., "People who like eggs eat egg salad more often")](http://datacolada.org/18)
 * [Joe Simmons' talk at SPSP 2020: "How can you tell the difference between a true finding and a false finding?"](https://youtu.be/ny-NAgYiYIs)
-* [Joe Hilgard's 'Maximum Positive Control': An experimental approach to estimate the largest effect an experiment can produce](https://doi.org/10.1016/j.jesp.2020.104082)
+* [Joe Hilgard's 'Maximum Positive Control': An experimental approach to estimate the largest effect a procedure can generate](https://doi.org/10.1016/j.jesp.2020.104082)
+* [Uri Simonsohn's discussion of why the concept of "average effect size" doesn't really make sense (related to the earlier discussion of the effect size of needle pricking on pain)](http://datacolada.org/33) 
