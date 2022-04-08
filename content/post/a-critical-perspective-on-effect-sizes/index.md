@@ -350,3 +350,4 @@ A mismatch between the expected and actual effect size might be the sign of a mi
 * [Joe Simmons' talk at SPSP 2020: "How can you tell the difference between a true finding and a false finding?"](https://youtu.be/ny-NAgYiYIs)
 * [Joe Hilgard's 'Maximum Positive Control': An experimental approach to estimate the largest effect a procedure can generate](https://doi.org/10.1016/j.jesp.2020.104082)
 * [Uri Simonsohn's discussion of why the concept of "average effect size" doesn't really make sense (related to the earlier discussion of the effect size of needle pricking on pain)](http://datacolada.org/33) 
+* [Kim, Hofman and Goldstein's (2022) paper on "Improving the communication of effect sizes"](http://jakehofman.com/publication/effect-size-analogies/)
