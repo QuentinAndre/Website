@@ -105,7 +105,7 @@ It has an $\eta^2$ of 0.614, which again means Financial Constraints explain 61.
 
 
 If we plot their relationship, we can indeed see this strong association:
-* The variance explained by Financial Constraints is very high: People at low (vs. high) levels of Financial Constraints have a much lower (vs. higher) WTP.
+* The variance explained by Financial Constraints is very high: People at low (vs. high) levels of Financial Constraints have a much higher (vs. lower) WTP.
 * As a consequence, the residual variance in WTP at any given level of Financial Constraints is much smaller than the overall amount of variance.
 
 For now, let's remember this: $\eta^2$, $\eta^2_p$, $\epsilon_p$, $\epsilon^2_p$, $\omega^2$ and $\omega^2_p$ all tell us (roughly) the percentage of the variance in a phenomenon that is explained by a predictor.
