@@ -31,7 +31,7 @@ projects: []
 
 If you've never done it before, or even if you've only done it a few times, pre-registration can feel intimidating.
 
-* What if your pre-registration is not detailed enough?
+* What if your pre-registration is not detailed enough? 
 * What if you forget something?
 * What if your design is complex, and you pre-register the wrong analysis?
 * What if you pre-register 400 participants, but then a pandemic hit, all the labs around the world are closed, and you only get 300 responses? (Complete hypothetical scenario, never happened to me before).
@@ -63,9 +63,9 @@ Let's go back to our researcher studying the friendliness of anthropomorphic veg
 * Whether to exclude the 10% of participants who will fail the attention check.
 * Whether to control for the agreeableness of the participant.
 
-In total, the researcher has 3 x 2 x 2 x 2 x 2 = 48 different possible specifications that they can run.
+In total, the researcher has 3 x 2 x 2 x 2 x 2 = 48 different possible specifications that they can run. 
 
-Now, imagine that this researcher decides to write an extremely minimal pre-registration: The only thing that the pre-registration states is is "We will collect 50 participants per cell, for a total of 100 participants." That's it.
+Now, imagine that this researcher decides to write an extremely minimal pre-registration: The only thing that the pre-registration states is is "We will collect 50 participants per cell, for a total of 100 participants." That's it. 
 
 It's a very bad pre-registration, one that addresses only *one* of the many degrees of freedom available to the researcher. And yet, by restricting a *single* degree of freedom, the number of possible specifications is *halved*: The researcher can now only run 3 x 2 x 2 x 2 = 24 specifications.
 
@@ -93,7 +93,7 @@ The graph below shows the distribution of the p-values that these procedures wil
     
 
 
-The lines that you see in this figure are called survival curves: They show the percentage of experiments that produced a significant result (on the y-axis) at a given significance threshold (on the x-axis).
+The lines that you see in this figure are called survival curves: They show the percentage of experiments that produced a significant result (on the y-axis) at a given significance threshold (on the x-axis). 
 
 We first see that when we have a perfect pre-registration (the blue line), the false-positive rates are nominal:
 * 5% of the experiments yield a significant result at α = .05
@@ -102,7 +102,7 @@ We first see that when we have a perfect pre-registration (the blue line), the f
 
 This isn't surprising: As discussed earlier, the main benefit of pre-registration is to maintain false-positive rates at their nominal level.
 
-We also see that when there is no pregistration (the red line), the false-positive rates jump to unacceptable levels:
+We also see that when there is no pregistration (the red line), the false-positive rates jump to unacceptable levels: 
 * 40% of the experiments yield a significant result at α = .05
 * 12% at α = .01
 * .15% at α = .001.
@@ -129,6 +129,5 @@ For reviewers and readers:
 
 * If a study is not pre-registered, you cannot know how many degrees of freedom were exerted by the researchers: Maybe none, maybe many. As a reader, this should lead you to exert caution when interpreting the p-values, [particularly if they are between .01 and .05](http://datacolada.org/45). As a reviewer, it might be a cue to ask for a pre-registered replication of the finding.
 * Not all pre-registrations are equal. Reading "the study was pre-registered" doesn't tell you how many researchers' degrees of freedom were controlled for. This can only be assessed by carefully reading the pre-registration, and comparing it to the design of the study.
-* Don't automatically assume that any deviation from the pre-registration means a false-positive result. It is a counter-productive attitude that can discourage people from pre-registering. As shown in the simulations above, deviations can have a minor impact on false-positive rates as long as 1) the original pre-registration controlled for most (ideally all) the researchers' degrees of freedom and 2) the deviation(s) are small and limited in scope.
-* On the contrary, deviations should raise eyebrows when 1) there are many of them, 2) when the original pre-registration was vague, and 3) when the p-value is large.
-
+* Don't automatically assume that any deviation from the pre-registration means a false-positive result. It is a counter-productive attitude that can discourage people from pre-registering. As shown in the simulations above, deviations can have a minor impact on false-positive rates as long as 1) the original pre-registration controlled for most (ideally all) the researchers' degrees of freedom and 2) the deviation(s) are small and limited in scope. 
+* On the contrary, deviations should raise eyebrows 1) when there are many of them, 2) when the original pre-registration was vague, and 3) when the p-value is large.
