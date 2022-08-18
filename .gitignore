@@ -8,3 +8,4 @@ public/
 # Misc
 .ipynb_checkpoints
 *.ipynb
+header.md
