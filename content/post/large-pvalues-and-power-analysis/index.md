@@ -40,7 +40,7 @@ The argument goes like this:
 
 Another flavor of this argument is "small p-values means that researchers were wasteful, collected too many observations, and made their effect *too significant*".
 
-Are there any merits to this argument? Could large p-values be explained by thoughtful researchers collecting *just enough participants* to detect a *carefully-estimated effect size*? Let's dive in!
+Is there any merit to this argument? Could large p-values be explained by thoughtful researchers collecting *just enough participants* to detect a *carefully-estimated effect size*? Let's dive in!
 
 ## Can Researchers Predict the Effect Size They'll Find?
 
