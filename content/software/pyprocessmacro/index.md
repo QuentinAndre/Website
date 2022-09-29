@@ -551,6 +551,9 @@ methods:
 related indices, as printed by Process.summary().
 * `coeff_summary()` returns a DataFrame of indirect effect(s) and their
 SE/CI for each of the mediation paths
+* `MM_index_summary()` returns a DataFrame of indices for Moderated Mediation, 
+and their SE/CI, for each of the mediation paths. If the model does not compute 
+a MM, this will return an error.
 * `PMM_index_summary()` returns a DataFrame of indices for Partial
 Moderated Mediation, and their SE/CI, for each of the moderators and
 mediation paths. If the model does not compute a PMM, this will return
@@ -559,7 +562,7 @@ an error.
 Moderated Mediation, and their SE/CI, for each of the moderators and
 mediation paths. If the model does not compute a CMM, this will return
 an error.
-* `CMM_index_summary()` returns a DataFrame of indices for Moderated
+* `MMM_index_summary()` returns a DataFrame of indices for Moderated
 Moderated Mediation, and their SE/CI, for each of the mediation paths.
 If the model does not compute a MMM, this will return an error.
 
