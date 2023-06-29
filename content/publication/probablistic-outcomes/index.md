@@ -46,7 +46,7 @@ show that it isn't driven by beliefs about the quality the good (we always use g
 quality), by a misunderstanding of the instructions, or by differences in "weirdness" (Mislavsky and Simonsohn 2018)
 between the transactions."
 
-tags: ['lotteries', 'risk aversion', 'probability']
+tags: ['lotteries', 'risk aversion']
 categories: []
 featured: false
 
