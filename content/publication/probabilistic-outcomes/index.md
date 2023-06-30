@@ -5,7 +5,7 @@
 title: "Probabilistic Outcomes Are Valued Less in Expectation, Even Conditional on Their Realization"
 authors: [Gabriele Paolacci, Quentin André]
 date: "2023"
-doi: "10.1037/xge0001052"
+doi: ""
 
 # Schedule page publish date (NOT publication's date).
 
@@ -78,7 +78,7 @@ links:
 - icon_pack: fas
   icon:
   name: Notebook
-  url: "publication/reanalysis-ws/notebook.html"
+  url: ""
 
 # Featured image
 
