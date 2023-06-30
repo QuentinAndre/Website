@@ -26,7 +26,7 @@ publication_types: [2]
 publication: "Management Science"
 publication_short: "ManSci"
 
-abstract: "Most theories of decision-making under risk assume that payoffs and probabilities are separable: In the
+abstract: 'Most theories of decision-making under risk assume that payoffs and probabilities are separable: In the
 context of a lottery, the subjective value of a prospective outcome (the payoff) is assumed to be independent of the
 likelihood that the outcome will occur (the probability). In violation of this assumption, we present eight experiments
 showing that people anticipate less utility from uncertain outcomes than from certain outcomes, even conditional on
@@ -35,16 +35,16 @@ to spend money or time; choice between different options), different populations
 different manipulations of uncertainty. We show that this result does not simply reflect a misunderstanding of the
 instructions, or people’s aversion towards “weird” transaction with unexplained features. We highlight the implications
 of this phenomenon for empirical investigations of risk preferences, and conclude with a discussion of the psychological
-mechanisms that might drive the devaluation of probabilistic outcomes."
+mechanisms that might drive the devaluation of probabilistic outcomes.'
 
 # Summary. An optional shortened abstract.
 
-summary: "Would people report a different valuation for a $50 Amazon gift card that is available, and for a $50 Amazon
+summary: 'Would people report a different valuation for a $50 Amazon gift card that is available, and for a $50 Amazon
 gift card that has a 10% chance of being available? In violation of expected utility theory, we show that people
 anticipate less utility from uncertain outcomes than from certain outcomes, even conditional on their realization. We
 show that it isn't driven by beliefs about the quality the good (we always use gift cards, which are of unambiguous
 quality), by a misunderstanding of the instructions, or by differences in "weirdness" (Mislavsky and Simonsohn 2018)
-between the transactions."
+between the transactions.'
 
 tags: ['lotteries', 'risk aversion']
 categories: []
