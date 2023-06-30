@@ -39,12 +39,12 @@ mechanisms that might drive the devaluation of probabilistic outcomes."
 
 # Summary. An optional shortened abstract.
 
-summary: "Would people report a different valuation for a \$50 Amazon gift card that is certain to be available, and for a \$50 Amazon
-gift card that has a 10% chance of being available? In violation of expected utility theory, we show that people
-anticipate less utility from uncertain outcomes than from certain outcomes, even conditional on their realization. We
-show that it isn't driven by beliefs about the quality the good (we always use gift cards, which are of unambiguous
-quality), by a misunderstanding of the instructions, or by differences in “weirdness“ (Mislavsky and Simonsohn 2018)
-between the transactions."
+summary: "Would people report a different valuation for a 50 dollars Amazon gift card that is certain to be available,
+and for the same gift card that has a 10% chance of being available? In violation of expected utility theory, we show
+that people anticipate less utility from uncertain outcomes than from certain outcomes, even conditional on their
+realization. We show that it isn't driven by beliefs about the quality the good (we always use gift cards, which are of
+unambiguous quality), by a misunderstanding of the instructions, or by differences in “weirdness“ (Mislavsky and
+Simonsohn 2018) between the transactions."
 
 tags: ['lotteries', 'risk aversion']
 categories: []
