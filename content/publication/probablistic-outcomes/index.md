@@ -39,7 +39,7 @@ mechanisms that might drive the devaluation of probabilistic outcomes."
 
 # Summary. An optional shortened abstract.
 
-summary: "Would people report a different valuation for a $50 Amazon gift card that is available, and for a $50 Amazon
+summary: "Would people report a different valuation for a \$50 Amazon gift card that is certain to be available, and for a \$50 Amazon
 gift card that has a 10% chance of being available? In violation of expected utility theory, we show that people
 anticipate less utility from uncertain outcomes than from certain outcomes, even conditional on their realization. We
 show that it isn't driven by beliefs about the quality the good (we always use gift cards, which are of unambiguous
