@@ -43,6 +43,8 @@ Let’s use an example here. A researcher studying an anchoring effect learns, t
 What if they really have no clue about effect sizes? Turns out that they still know something valuable: How much money they feel comfortable spending on this study. As basic as it sounds, knowing how much you want or can afford to spend on a study can be a valuable input into different kinds of power analysis. Rather than calculating how many participants you need to detect a given effect size with a desired level of power, researchers can use this information to determine 1) the effect size that this sample size allows them to detect with a given level of power, or 2) the level of power that this sample size affords them for a given effect size. 
 
 Let’s use an example again. A researcher has determined that they have enough money to collect up to 400 observations for their two-cell experiment. Using the types of power analysis we have just described, they can for instance determine that 1) the smallest effect size that they can detect with 80% power is d = .28, or that 2) if they study an effect size of d = .15, they will have 32% power to detect it. They can even draw a power curve, like the one below, showing how much power they would have to detect effects of different sizes.
+ 
+![png](files/Fig1.png)
 
 ## More Useful, But Potentially Wasteful
 While both approaches are undeniably more tractable than attempting to guess the “average” effect size, they are also costlier: Setting N based on the Smallest Effect Size of Interest means powering the study for the “worst case scenario,” and setting N based on financial resources means spending the full amount that the researcher feels comfortable spending.
