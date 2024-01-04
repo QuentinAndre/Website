@@ -30,7 +30,6 @@ projects: []
 
 ---
 
-## The Problem With Power Analysis
 As discussed in a [previous blog post]({{< ref "/post/is-power-analysis-useless" >}}), a core issue with power analysis is that it asks researchers to guess the effect size that their experiment will produce… but that they are, in most cases, unable to make this prediction. How should researchers set their sample size then?
 
 ## What Can Researchers Know?
@@ -60,6 +59,8 @@ The good news is that these designs exist. They are called Group Sequential Desi
 
 The bad news is that these designs are virtually inexistent in consumer behavior and behavioral sciences [^1].
 
-The good news is that, in recent years, tutorials [such as Lakëns and colleagues’](https://osf.io/preprints/psyarxiv/x4azm) have started raising awareness about these designs. In fact, my colleague Nick Reinholtz and I have been working on a practical tutorial targeted at consumer researchers: We offer a practical method to facilitate the adoption of these techniques (including a web app researchers can use), explain their benefits to consumer researchers, and simulate their cost-savings potential in a re-analysis of consumer research experiments. You can [find the pre-print here](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4561485). Stay tuned for a third blog post describing the key results of our paper!
+The good news is that, in recent years, tutorials [such as Lakëns and colleagues’](https://osf.io/preprints/psyarxiv/x4azm) have started raising awareness about these designs. In fact, my colleague Nick Reinholtz and I have been working on a practical tutorial targeted at consumer researchers: We offer a practical method to facilitate the adoption of these techniques (including a web app researchers can use), explain their benefits to consumer researchers, and simulate their cost-savings potential in a re-analysis of consumer research experiments. You can [find the pre-print here](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4561485). 
+
+Stay tuned for a third blog post describing the key results of our paper!
 
 [^1]: In fact, the only paper I know that relies on group sequential designs [incorrectly applies the method]( https://doi.org/10.1073/pnas.2000065117).
