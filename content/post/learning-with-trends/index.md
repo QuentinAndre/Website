@@ -3,6 +3,7 @@
 
 title: "Can We Learn What Helps a Baby Sleep at Night?"
 subtitle: "How natural improvements in outcomes can lead us to form strong, yet incorrect, beliefs about how the world works."
+summary: "How natural improvements in outcomes can lead us to form strong, yet incorrect, beliefs about how the world works."
 authors: [Quentin André]
 tags: [Tutorial]
 categories: []
@@ -39,7 +40,7 @@ These late-night scrolling sessions taught me three things:
 1) Parents often believe they've found a "strategy" that helped their kids sleep through the night.
 2) These strategies can be very specific. I mean VERY:
 
-![png](files/Fig1.png)
+![png](files/Figure1.png)
 
 3) These strategies rarely agree with each other: More naps! Fewer naps! Longer naps! Earlier bedtime! Later bedtime! Wean the bottle at once! Wean it gradually! Colder room! Warmer room! 
 
