@@ -10,7 +10,7 @@ categories: []
 date: 2024-02-24
 lastmod: 2024-02-24
 featured: false
-draft: false
+draft: true
 toc: false
 
 # Featured image
@@ -60,7 +60,9 @@ But what if we had made changes? What if we had gone through this process of tri
 
 ## A Model of Learning Under Exogenous Influences
 
-Why do I believe this? Turns out Bart de Langhe and I have been studying a general form of the "baby sleep" problem: How people form beliefs about cue-outcome relationships in the presence of exogenous trends (improvement or worsening in the quality of the outcomes over time, independently of the decision makers' actions). As part of this work, we have come up with a model explaining how positive exogenous trends can shape stronger (yet less accurate) beliefs in how cues relate to outcomes. Our model is pretty straightforward, and relies on two fundamental aspects of human learning.
+Why do I believe this? Turns out my co-author [Bart de Langhe](https://www.bartdelanghe.com/) and I have been studying a general form of the "baby sleep" problem: How people form beliefs about cue-outcome relationships in the presence of exogenous trends (improvement or worsening in the quality of the outcomes over time, independently of the decision makers' actions). As part of this work, we have come up with a model describing how positive exogenous trends can shape stronger (yet less accurate) beliefs in how cues relate to outcomes. 
+
+This model is pretty straightforward, and relies on two fundamental aspects of human learning.
 
 First, people rarely compare outcomes to the appropriate counterfactual. To test whether an earlier bedtime leads to a better night of sleep for your baby, you would need to know what would have happened if you didn't change the bedtime. Unfortunately, this counterfactual is rarely accessible. Instead, people tend to monitor progress over time, and to attribute changes in the outcome to their actions.
 
