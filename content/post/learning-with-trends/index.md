@@ -34,7 +34,7 @@ projects: []
 
 In November 2022, my wife and I welcomed our first child into our lives. It turns out a lot of things change when you go from zero to one kid... the most dramatic change of all being the amount of sleep that you get.
 
-A few parents are apparently blessed with "unicorn babies" who quickly learn how to sleep through the night. Good for them. The majority of parents will learn the hard way that "sleeping like a baby" is one of the most misleading idiom of the English language. For the least fortunate of parents, baby sleep will even become a source of existential dread. The type of dread that will lead you to buy (but never read) 800-page-long treaties on baby sleep; to endlessly scroll "sleep consultant" accounts on Instagram for guidance; or to ask reddit at 2AM "why is my child waking up every two hours". 
+A few parents are apparently blessed with "unicorn babies" who quickly learn how to sleep through the night. Good for them. The majority of parents will learn the hard way that "sleeping like a baby" is one of the most misleading idioms of the English language. For the least fortunate of parents, baby sleep will even become a source of existential dread. The type of dread that will lead you to buy (but never read) 800-page-long treaties on baby sleep; to endlessly scroll "sleep consultant" accounts on Instagram for guidance; or to ask reddit at 2AM "why is my child waking up every two hours". 
 
 As you can guess from these suspiciously detailed examples, I was one of these parents. These late-night scrolling sessions taught me three things:
 1) Parents often believe they've found a "strategy" that helped their kids sleep through the night.
