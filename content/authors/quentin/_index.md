@@ -50,7 +50,7 @@ social:
   icon_pack: fab
   link: https://twitter.com/andre_quentin
 - icon: google-scholar
-  icon_pack: ai
+  icon_pack: fab
   link: https://scholar.google.com/citations?user=FWaxM6MAAAAJ&hl=en
 - icon: github
   icon_pack: fab
