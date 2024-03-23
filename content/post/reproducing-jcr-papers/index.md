@@ -30,7 +30,7 @@ projects: []
 
 ---
 
-My co-author Nick Reinholtz and I have attempted ([as part of an effort to validate the cost-effectiveness of method we are writing a paper on](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4561485) to reproduce the results of all pre-registered studies with open data we could find in the Journal of Consumer Research. What did we learn? A few interesting things!
+My co-author Nick Reinholtz and I have recently attempted ([as part of an effort to validate the cost-effectiveness of method we are writing a paper on](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4561485)) to reproduce the results of all pre-registered studies with open data we could find in the Journal of Consumer Research. What did we learn? A few interesting things!
 
 ## Lesson 1: The Data Can Be Available... Just Not to You. 
 We searched for all articles published in JCR which contain at least one of the keywords “osf”, “Open Science Framework” or “researchbox” (to identify posted datasets) and at least one of the keywords “pre-reg*”, “prereg*”, or “aspredicted” (to identify pre-registrations). This search returned 37 papers: Exciting!
@@ -54,7 +54,7 @@ Which brings me to the final lesson we learned...
 
 A few papers included their code along with their data. For these papers, reproducing their results was generally a breeze. Most papers, however, did not include their code: We had to rely on the description of the analysis in the paper and in the pre-registration to process the data.
 
-Language, as it turns out, is highly imprecise: In many cases, it took many trials-and-errors to find out exactly what the authors had done. In a few rare cases, we were completely unable to reproduce the analyses.
+Language, as it turns out, is highly imprecise: In many cases, it took many trials-and-errors to find out exactly what the authors had done. In a few rare cases, we were completely unable to reproduce the analyses. So please, post your code! Even SPSS syntax helps!
 
 ## Lesson 4: Things Are Getting Better
 
