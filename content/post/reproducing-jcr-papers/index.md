@@ -1,7 +1,7 @@
 ---
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
-title: "Three Lessons from Reproducing JCR Studies"
+title: "Four Lessons from Reproducing JCR Studies"
 subtitle: "What happens when two researchers attempt to reproduce all the pre-registered studies with open data published in JCR?"
 summary: "What happens when two researchers attempt to reproduce all the pre-registered studies with open data published in JCR?"
 authors: [Quentin André]
