@@ -32,23 +32,23 @@ projects: []
 
 My co-author Nick Reinholtz and I have recently attempted ([as part of an effort to validate the cost-effectiveness of method we are writing a paper on](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4561485)) to reproduce the results of all pre-registered studies with open data we could find in the Journal of Consumer Research. What did we learn? A few interesting things!
 
-## Lesson 1: The Data Can Be Available... Just Not to You. 
+## Lesson 1: The Data Can Be Available... Just Not to You
 We searched for all articles published in JCR which contain at least one of the keywords “osf”, “Open Science Framework” or “researchbox” (to identify posted datasets) and at least one of the keywords “pre-reg*”, “prereg*”, or “aspredicted” (to identify pre-registrations). This search returned 37 papers: Exciting!
 
 When we took a closer look at this set however, we found out that a few papers mentioned that the data was available on OSF/ResearchBox repository... but did not share a link. A mistake? No, a literal interpretation of the [JCR Data Policy](https://consumerresearcher.com/jcrs-data-policy-in-practice), which requires that the data is made accessible to the Editor and Associate Editor... but not to the readers of the journal.
 
 I must admit I was a bit surprised: To me, the main reason not to share data is that it takes time and effort to gather your files and upload them somewhere. But once you've uploaded it somewhere, why not make it accessible to the public?
 
-In the end, we only had 25 papers with data. Bummer.
+In the end, we only had 25 papers with data. Bummer... but less work for us I guess?
 
 ## Lesson 2: Many Pre-Registrations Are Under-Specified, And Deviations Are Rarely Acknowledged
 
 Next, we needed to look at the pre-registrations (to identify the primary hypothesis of each study), and contrast them with the analyses reported in the paper. We found two things:
 
-* Researchers occasionally deviate from their pre-registrations ([which can be done for perfectly good reasons](https://osf.io/preprints/psyarxiv/ha29k)), but very rarely mention it. This isn't great, as it suggests that 1) reviewers didn't take a close look at the pre-registration and 2) the pre-registered analysis might not have been significant.
+* Researchers occasionally deviate from their pre-registrations ([which can be done for perfectly good reasons](https://osf.io/preprints/psyarxiv/ha29k)), but very rarely mention it. This isn't great, as it suggests that 1) reviewers might not have taken a close look at the pre-registration and 2) the pre-registered analysis might not have been significant (otherwise why deviate from it?).
 * A good pre-registration should leave no degrees of freedom to the researcher, and should thus cover data exclusions, data transformations, dependent measures, statistical tests, contrasts of interest, etc. Few of them had this level of details. While a [bad pre-registration is still  better than no pre-registration]({{< ref "/post/bad-prereg-better-than-no-prereg" >}}), this lack of clarity made it difficult to tell if the analyses matched the researchers' original intentions.
 
-Which brings me to the final lesson we learned...
+Which brings me to the next lesson we learned...
 
 ## Lesson 3: Results Are Very Hard to Reproduce From The Text of The Manuscript Alone
 
