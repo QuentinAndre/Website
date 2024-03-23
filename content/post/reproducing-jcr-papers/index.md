@@ -35,7 +35,7 @@ My co-author Nick Reinholtz and I have recently attempted ([as part of an effort
 ## Lesson 1: The Data Can Be Available... Just Not to You. 
 We searched for all articles published in JCR which contain at least one of the keywords “osf”, “Open Science Framework” or “researchbox” (to identify posted datasets) and at least one of the keywords “pre-reg*”, “prereg*”, or “aspredicted” (to identify pre-registrations). This search returned 37 papers: Exciting!
 
-When we took a closer look at this set however, we found out that a few papers mentioned that the data was available on OSF/ResearchBox repository... but did not share a link. A mistake? No, a consequence of the [JCR Data Policy](https://consumerresearcher.com/jcrs-data-policy-in-practice) which requires that the data is made accessible to the Editor and Associate Editor... but not to the readers of the journal.
+When we took a closer look at this set however, we found out that a few papers mentioned that the data was available on OSF/ResearchBox repository... but did not share a link. A mistake? No, a literal interpretation of the [JCR Data Policy](https://consumerresearcher.com/jcrs-data-policy-in-practice), which requires that the data is made accessible to the Editor and Associate Editor... but not to the readers of the journal.
 
 I must admit I was a bit surprised: To me, the main reason not to share data is that it takes time and effort to gather your files and upload them somewhere. But once you've uploaded it somewhere, why not make it accessible to the public?
 
