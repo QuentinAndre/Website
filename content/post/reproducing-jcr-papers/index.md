@@ -35,9 +35,9 @@ My co-author Nick Reinholtz and I have recently attempted ([as part of an effort
 ## Lesson 1: The Data Can Be Available... Just Not to You
 We searched for all articles published in JCR which contain at least one of the keywords “osf”, “Open Science Framework” or “researchbox” (to identify posted datasets) and at least one of the keywords “pre-reg*”, “prereg*”, or “aspredicted” (to identify pre-registrations). This search returned 37 papers: Exciting!
 
-When we took a closer look at this set however, we found out that a few papers mentioned that the data was available on OSF/ResearchBox repository... but did not share a link. A mistake? No, a literal interpretation of the [JCR Data Policy](https://consumerresearcher.com/jcrs-data-policy-in-practice), which requires that the data is made accessible to the Editor and Associate Editor... but not to the readers of the journal.
+When we took a closer look at this set however, we found out that a few papers mentioned that the data was available on an OSF/ResearchBox repository... but did not share a link. A mistake? No, a literal interpretation of the [JCR Data Policy](https://consumerresearcher.com/jcrs-data-policy-in-practice), which requires that the data is made accessible to the Editor and Associate Editor... but not to the readers of the journal.
 
-I must admit I was a bit surprised: To me, the main reason not to share data is that it takes time and effort to gather your files and upload them somewhere. But once you've uploaded it somewhere, why not make it accessible to the public?
+I must admit I was a bit surprised: To me, the main barrier to sharing data is that it takes time and effort to gather your data files, generate codebooks, and upload them somewhere. But once you've done it for one person, what's the cost of making it accessible to the public?
 
 In the end, we only had 25 papers with data. Bummer... but less work for us I guess?
 
@@ -54,7 +54,7 @@ Which brings me to the next lesson we learned...
 
 A few papers included their code along with their data. For these papers, reproducing their results was generally a breeze. Most papers, however, did not include their code: We had to rely on the description of the analysis in the paper and in the pre-registration to process the data.
 
-Language, as it turns out, is highly imprecise: In many cases, it took many trials-and-errors to find out exactly what the authors had done. In a few rare cases, we were completely unable to reproduce the analyses. So please, post your code! Even SPSS syntax helps!
+Descriptions of analyses are, as it turns out, highly imprecise: In many cases, it took many trials-and-errors to find out exactly what the authors had done. In a few rare cases, we were completely unable to reproduce the analyses. So please, post your code! Even SPSS syntax helps!
 
 ## Lesson 4: Things Are Getting Better
 
