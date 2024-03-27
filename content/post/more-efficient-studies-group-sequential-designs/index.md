@@ -48,7 +48,7 @@ Now, if group sequential designs can be so simple, why aren't they used more oft
 
 This adoption gap motivated us (Nick Reinholtz and I) to write a paper called "Pre-Registered Interim Analysis Designs (PRIADs): Increasing the Cost Effectiveness of Hypothesis Testing". This paper offers a practical procedure (called PRIAD) to facilitate the adoption of group sequential designs in consumer research. It also highlights the benefits that group sequential designs can unlock for researchers, and discusses the conditions under which they can offer a valid alternative to "Fixed N" designs.
 
-To celebrate the acceptance of this paper at the Journal of Consumer Research, I'm summarizing the key insights in this blog post. If you want to learn more, you can find accepted version [on the OSF repository of this project](https://osf.io/864ef).
+To celebrate the acceptance of this paper at the Journal of Consumer Research, I'm summarizing the key insights in this blog post. If you want to learn more, you can find the accepted version [on the OSF repository of this project](https://osf.io/864ef).
 
 ## The Benefits of PRIADs
 
