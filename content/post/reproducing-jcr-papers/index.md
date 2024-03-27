@@ -45,7 +45,7 @@ In the end, we only had 25 papers with data. Bummer... but less work for us I gu
 
 Next, we needed to look at the pre-registrations (to identify the primary hypothesis of each study), and contrast them with the analyses reported in the paper. We found two things:
 
-* Researchers occasionally deviate from their pre-registrations ([which can be done for perfectly good reasons](https://osf.io/preprints/psyarxiv/ha29k)), but very rarely mention it. This isn't great, as it suggests that 1) reviewers might not have taken a close look at the pre-registration and 2) the pre-registered analysis might not have been significant (otherwise why deviate from it?).
+* Researchers occasionally deviate from their pre-registrations ([which can be done for perfectly good reasons](https://osf.io/preprints/psyarxiv/ha29k)), but very rarely mention it. This isn't great, as it suggests that 1) reviewers might not have taken a close look at the pre-registration and 2) the pre-registered analysis might not have been significant (otherwise why deviate without mentioning it?).
 * A good pre-registration should leave no degrees of freedom to the researcher, and should thus cover data exclusions, data transformations, dependent measures, statistical tests, contrasts of interest, etc. Few of them had this level of details. While a [bad pre-registration is still  better than no pre-registration]({{< ref "/post/bad-prereg-better-than-no-prereg" >}}), this lack of clarity made it difficult to tell if the analyses matched the researchers' original intentions.
 
 Which brings me to the next lesson we learned...
@@ -58,6 +58,6 @@ Descriptions of analyses are, as it turns out, highly imprecise: In many cases, 
 
 ## Lesson 4: Things Are Getting Better
 
-As an open-science enthusiast, I was honestly a bit bummed to find out that out of all the research ever published in JCR, we could "only" find 25 papers with least one pre-registered study and open data. 
+As an open-science enthusiast, I was honestly a bit bummed to find out that out of all the research ever published in JCR, we could "only" find 25 papers with at least one pre-registered study and open data. 
 
 The silver lining is that things are improving. The first paper with open data and pre-registration was published in 2020. In 2023, there were 11 such papers. Progress!
