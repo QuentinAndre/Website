@@ -32,9 +32,7 @@ projects: []
 
 In previous blog posts, we have discussed [a core issue of power analysis]({{< ref "/post/is-power-analysis-useless" >}}) (it requires researchers to predict the effect size that their experiment will yield, something that is often impossible to do accurately); and [a costly solution to this issue]({{< ref "/post/making-power-analysis-informative-again" >}}) (powering for the smallest effect that researchers are interested in detecting, or can afford to detect).
 
-In this third blog post, we are going to discuss a better solution to the problem of sample size determination: A set of techniques that allow researchers to power studies for the worst case scenario... but that will stop data collection earlier when the effect is larger than expected. 
-
-
+In this third blog post, we are going to discuss a better solution to the problem of sample size determination: Group sequential designs. These designs can be powered to detect the smallest effect size researchers care about... and will stop data collection earlier whenever the effect is larger than expected.
 
 ## An Short Introduction to Group Sequential Designs
 
@@ -48,24 +46,24 @@ How? By conducting each of these hypothesis tests against a stricter critical va
 
 Now, if group sequential designs can be so simple, why aren't they used more often? We think it reflects a mix of a lack of guidance on how to implement them, a lack of awareness about their benefits, and a fear that the technique will not be perceived as legitimate by reviewers.
 
-This adoption gap motivated us to write a paper (just accepted at the Journal of Consumer Researcher) titled "Pre-Registered Interim Analysis Designs (PRIADs): Increasing the Cost Effectiveness of Hypothesis Testing". This paper highlights the benefits that group sequential designs can unlock for researchers, discusses the conditions under which they can offer a valid alternative to "Fixed N" designs, and offers a practical procedure (called PRIAD) to help researchers design and implement group sequential designs in their own studies. 
+This adoption gap motivated us to write a paper titled "Pre-Registered Interim Analysis Designs (PRIADs): Increasing the Cost Effectiveness of Hypothesis Testing". This paper (just accepted at the Journal of Consumer Researcher) offers a practical procedure (called PRIAD) to facilitate the adoption of group sequential designs in consumer research. It also highlights the benefits that group sequential designs can unlock for researchers, and discusses the conditions under which they can offer a valid alternative to "Fixed N" designs.
 
-This blog post summarizes our key insights, and the authors' copy of the accepted paper [is available here](https://osf.io/864ef).
+This blog post summarizes the key insights from our paper, and you can find accepted version [at the following address](https://osf.io/864ef).
 
 ## The Benefits of PRIADs
 
-First, why would researchers want to adopt PRIADs? We show that they have multiple benefits over Fixed N designs:
+Why might consumer researchers be interested in PRIADs? We show that they have multiple benefits over Fixed N designs:
 
 ### They Allow Researchers to Manage Effect Size Uncertainty, and Deliver More Informative Null Results
 
-With traditional "Fixed N" studies, researchers face an impossible dilemma: 
+With traditional "Fixed N" studies, researchers face a difficult dilemma: 
 
 * They can power their studies for the  effect size they expect. This approach is risky: If the effect size is smaller than expected, the study will be underpowered, and the researcher will not be able to draw meaningful conclusions from null results.
 * They can power their studies for the smallest effect size they are interested in. This approach is expensive: Researchers will collect much more data than they need whenever the effect is larger.
 
-PRIADs, on the other hand, achieve a valuable trade-off between these two extremes:
+PRIADs achieve a valuable trade-off between these two extremes:
 
-* They are powered to detect the smallest effect size that researchers are interested in (or can afford to) studies, which makes null results informative: A null result sends a credible signal to the researcher that the effect is too small to be detected given their resources, and that they should thus redirect their resources to other projects.
+* They can be powered to detect the smallest effect size that researchers are interested in (or can afford to) studies, which makes null results informative: A null result sends a credible signal to the researcher that the effect is too small to be detected given their resources, and that they should thus redirect their resources to other projects.
 * They allow researchers to stop data collection early whenever the effect is larger than expected. This means that, in practice, researchers will often collect less data than they would have with a Fixed N design.
 
 Which brings us to our next point...
@@ -74,8 +72,10 @@ Which brings us to our next point...
 
 Greater cost-efficiency, in the context of hypothesis testing, means that a design is able to achieve a given level of power while collecting a smaller number of observations. 
 
-Our paper first reports simulations showing that, in most circumstances, PRIADs are more cost-efficient than Fixed N designs:
-As long as researchers have more than 25% power to detect an effect, group sequential designs can achieve equivalent power while collecting a smaller number of observations. At higher levels of statistical power (e.g., 55%), all the PRIADs that we discuss in the paper are more efficient.
+Our paper reports simulations showing that, in most circumstances, PRIADs are more cost-efficient than Fixed N designs:
+
+* As long as researchers have more than 25% power to detect an effect, some PRIADs can achieve equivalent power while collecting a smaller number of observations.
+* At higher levels of statistical power (e.g., 55%), all the PRIADs that we discuss in the paper are more efficient.
 
 This is a theoretical result, but would these savings materialize in practice? To answer this question, we conducted a re-analysis of all the pre-registered studies with open data published in JCR. We were able to find 104 studies, and managed to reproduce the results of 101 of them. We simulate, for each study, what would have happened if researchers had used a PRIAD rather than a Fixed N study. We consider the four kinds of "off-the-shelf" PRIADs that we discuss in the paper.
 
@@ -96,7 +96,7 @@ The second figure shows that, even under this conservative assumption, the autho
 We occasionally use pilot studies to calibrate our stimulis or dependent measures: We typically run a small sample study (the “pilot”), analyze the data, and run a full-sample version of this study if the results of the pilot are promising enough. 
 However, this approach is wasteful: The data of a “successful” pilot study will be discarded, and only the data from the full-sample study is used in testing the hypothesis. 
 
-In the paper, we show that PRIADs can be used to make pilot studies more efficient: Researchers can design a PRIAD in which the pilot study corresponds to the first interim analysis, and the full-sample study corresponds to the final analysis. With this approach, the data of a successful pilot is not discarded.
+In the paper, we show that PRIADs can be used to make pilot studies more efficient: Researchers can design a PRIAD in which the pilot study corresponds to the first interim analysis, and the full-sample study corresponds to the final analysis. With this approach, the data of a successful pilot will not be discarded, saving the researcher some money.
 
 ## When Are PRIADs Appropriate?
 
@@ -134,12 +134,11 @@ To help researchers make these decisions and generate the corresponding pre-regi
 
 For researchers who do not want to make these decisions themselves finally, our paper also offers four "off-the-shelf" PRIADs.
 
-
 ## Conclusion
 
 The cost of publishing a consumer behavior paper has noticeably increased over the past decade. Papers tend to not only include more studies, but also more expensive studies (e.g., larger sample sizes, representative samples, incentive-aligned decisions, field studies, etc.). There is growing concern that this rising cost will have a negative impact on the field, as this could amplify the advantage held by scholars from well-funded institutions and limit marginalized scholars’ opportunities to establish valuable contributions.
 
-We hope that PRIADs can reduce the barriers to conducting rigorous research, and help researchers to make the most of their resources. We are excited to see how the field will react to this new tool, and are looking forward to seeing the first studies that will use PRIADs to test their hypotheses!
+We hope that PRIADs can reduce the barriers to conducting rigorous research, and help researchers to make the most of their resources. We are excited to see how the marketing community will react to this tool, and are looking forward to seeing the first studies that will use PRIADs to test their hypotheses!
 
 [^1]: As it turns out, [scientists do not always abide by this restriction](https://journals.sagepub.com/doi/10.1177/0956797611430953).
 [^2]: If you are wondering why the false positive rate is not .1 (i.e., .05 x 2), it is because the two tests are not independent: The second test is based in part on the data that was used in the first test, and thus correlated with the first test.
