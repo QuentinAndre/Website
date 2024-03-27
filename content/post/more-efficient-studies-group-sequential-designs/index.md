@@ -30,25 +30,25 @@ projects: []
 
 ---
 
-In previous blog posts, we have discussed [a core issue of power analysis]({{< ref "/post/is-power-analysis-useless" >}}) (it requires researchers to predict the effect size that their experiment will yield, something that is often impossible to do accurately); and [a costly solution to this issue]({{< ref "/post/making-power-analysis-informative-again" >}}) (powering for the smallest effect that researchers are interested in detecting, or can afford to detect).
+In previous blog posts, we have discussed [a core issue of power analysis]({{< ref "/post/is-power-analysis-useless" >}}) (it requires researchers to predict the effect size that their experiment will yield, something that is often impossible to do accurately) and [a costly solution to this issue]({{< ref "/post/making-power-analysis-informative-again" >}}) (powering studies for the smallest effect size that researchers are interested in detecting or can afford to detect).
 
 In this third blog post, we are going to discuss a better solution to the problem of sample size determination: Group sequential designs. These designs can be powered to detect the smallest effect size researchers care about... and will stop data collection earlier whenever the effect is larger than expected.
 
-## An Short Introduction to Group Sequential Designs
+## What Are Group Sequential Designs?
 
 In traditional "Fixed N" designs, researchers must collect all their data before they can test their hypothesis [^1]. This constraint is inherent to null-hypothesis significance testing: If researchers repeatedly test for the presence of an effect while data collection is ongoing, they will inflate their false-positive rate. For instance, if a researcher tests the same hypothesis twice (once after collecting half the data, then a second time after collecting the full data) against the critical value $p_{crit}$ = .05, the overall false-positive rate of this procedure will be $\alpha$ = .083 (rather than the desired $\alpha$ = .05) [^2].
 
 This limitation is costly for researchers: It means that whenever the effect size is larger than expected, they will collect "too much" data (i.e., more than they need to achieve a decent amount of statistical power)... but will learn this after the data has already been collected. 
 
-Group sequential designs, on the other hand, do not have this constraint. These designs allow researchers to conduct a pre-specified number of interim hypothesis tests on their data, and to terminate data collection whenever the effect is large enough to reject the null, all the while keeping false-positive rates at a nominal level.
+Group sequential designs, on the other hand, do not have this constraint. They allow researchers to conduct a pre-specified number of interim hypothesis tests on their data, and to terminate data collection whenever the effect is large enough to reject the null... all the while keeping false-positive rates at a nominal level.
 
 How? By conducting each of these hypothesis tests against a stricter critical value. If, in the example above, the researcher performs each test against $p_{crit}$ = .0294 rather than $p_{crit}$ = .05, then the false-positive rate across the two tests will be exactly $\alpha$ = .05.
 
-Now, if group sequential designs can be so simple, why aren't they used more often? We think it reflects a mix of a lack of guidance on how to implement them, a lack of awareness about their benefits, and a fear that the technique will not be perceived as legitimate by reviewers.
+Now, if group sequential designs can be so simple, why aren't they used more often? Probably a mix of a lack of guidance on how to implement them, a lack of awareness about their benefits, and a fear that the technique will not be perceived as legitimate by reviewers.
 
-This adoption gap motivated us to write a paper titled "Pre-Registered Interim Analysis Designs (PRIADs): Increasing the Cost Effectiveness of Hypothesis Testing". This paper (just accepted at the Journal of Consumer Researcher) offers a practical procedure (called PRIAD) to facilitate the adoption of group sequential designs in consumer research. It also highlights the benefits that group sequential designs can unlock for researchers, and discusses the conditions under which they can offer a valid alternative to "Fixed N" designs.
+This adoption gap motivated us (Nick Reinholtz and I) to write a paper called "Pre-Registered Interim Analysis Designs (PRIADs): Increasing the Cost Effectiveness of Hypothesis Testing". This paper offers a practical procedure (called PRIAD) to facilitate the adoption of group sequential designs in consumer research. It also highlights the benefits that group sequential designs can unlock for researchers, and discusses the conditions under which they can offer a valid alternative to "Fixed N" designs.
 
-This blog post summarizes the key insights from our paper, and you can find accepted version [at the following address](https://osf.io/864ef).
+To celebrate the acceptance of this paper at the Journal of Consumer Research, I'm summarizing the key insights in this blog post. If you want to learn more, you can find accepted version [on the OSF repository of this project](https://osf.io/864ef).
 
 ## The Benefits of PRIADs
 
