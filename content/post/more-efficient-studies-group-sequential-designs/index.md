@@ -38,13 +38,13 @@ In this third blog post, we are going to discuss group sequential designs: A set
 
 ## An Short Introduction to Group Sequential Designs
 
-In traditional "Fixed N" designs, researchers must collect all their data before they can test their hypothesis [^1]. This constraint is inherent to null-hypothesis significance testing: If researchers repeatedly test for the presence of an effect while data collection is ongoing, they will inflate their false-positive rate. For instance, if a researcher tests the same hypothesis twice (once after collecting half the data, then a second time after collecting the full data) against the critical value $\p_crit$ = .05, the overall false-positive rate of this procedure will be \alpha = .083 (rather than the desired \alpha = .05) [^2].
+In traditional "Fixed N" designs, researchers must collect all their data before they can test their hypothesis [^1]. This constraint is inherent to null-hypothesis significance testing: If researchers repeatedly test for the presence of an effect while data collection is ongoing, they will inflate their false-positive rate. For instance, if a researcher tests the same hypothesis twice (once after collecting half the data, then a second time after collecting the full data) against the critical value $p_{crit}$ = .05, the overall false-positive rate of this procedure will be $\alpha$ = .083 (rather than the desired \alpha = .05) [^2].
 
 This limitation is costly for researchers: It means that whenever the effect size is larger than expected, they will collect "too much" data (i.e., more than they need to achieve a decent amount of statistical power)... but will learn this after the data has already been collected. 
 
 Group sequential designs, on the other hand, do not have this constraint. These designs allow researchers to conduct a pre-specified number of interim hypothesis tests on their data, and to terminate data collection whenever the effect is large enough to reject the null, all the while keeping false-positive rates at a nominal level.
 
-How? By conducting each of these hypothesis tests against a stricter critical value. If, in the example above, the researcher performs each test against $\p_crit$ = .0294$ rather than $\p_crit$ = .05$, then the false-positive rate across the two tests will be exactly alpha = .05.
+How? By conducting each of these hypothesis tests against a stricter critical value. If, in the example above, the researcher performs each test against $p_{crit}$ = .0294$ rather than $p_{crit}$ = .05, then the false-positive rate across the two tests will be exactly $\alpha$ = .05.
 
 Now, if group sequential designs can be so simple, why aren't they used more often? We think it reflects a mix of a lack of guidance on how to implement them, a lack of awareness about their benefits, and a fear that the technique will not be perceived as legitimate by reviewers.
 
