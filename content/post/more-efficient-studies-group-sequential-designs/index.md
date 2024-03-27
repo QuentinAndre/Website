@@ -5,7 +5,7 @@ title: "Designing More Efficient Studies with Group Sequential Designs"
 subtitle: "Creating studies that are powered to detect the smallest effect of interest... without collecting more data than you need to detect bigger effects"
 summary: "Creating studies that are powered to detect the smallest effect of interest... without collecting more data than you need to detect bigger effects"
 authors: [Quentin André]
-tags: [Tutorial]
+tags: [Tutorial, Research Methods]
 categories: []
 date: 2024-03-27
 lastmod: 2024-03-27
@@ -30,58 +30,31 @@ projects: []
 
 ---
 
-In a [first blog post]({{< ref "/post/is-power-analysis-useless" >}}), we have discussed a core issue of power analysis: It requires researchers to predict the effect size that their experiment will yield, but they are, in most cases, unable to make this prediction.
+In previous blog posts, we have discussed [a core issue of power analysis]({{< ref "/post/is-power-analysis-useless" >}}) (it requires researchers to predict the effect size that their experiment will yield, something that is often impossible to do accurately); and [a costly solution to this issue]({{< ref "/post/making-power-analysis-informative-again" >}}) (powering for the smallest effect that researchers are interested in detecting, or can afford to detect).
 
-In a [second blog post]({{< ref "/post/making-power-analysis-informative-again" >}}), we have discussed a possible solution to this issue: Rather than powering for the *expected* effect size, researchers can power for the *smallest* effect that they are interested in detecting, or can afford to detect. While this approach guarantees that the experiment will give an informative answer, it forces researchers to collect a lot more data than they need whenever the effect is larger.
+In this third blog post, we are going to discuss a better solution to the problem of sample size determination: A set of techniques that allow researchers to power studies for the worst case scenario... but that will stop data collection earlier when the effect is larger than expected. 
 
-In this third blog post, we are going to discuss group sequential designs: A set of techniques that allow researchers to power studies for the worst case scenario... but that will stop data collection earlier when the effect is larger than expected. 
+
 
 ## An Short Introduction to Group Sequential Designs
 
-In traditional "Fixed N" designs, researchers must collect all their data before they can test their hypothesis [^1]. This constraint is inherent to null-hypothesis significance testing: If researchers repeatedly test for the presence of an effect while data collection is ongoing, they will inflate their false-positive rate. For instance, if a researcher tests the same hypothesis twice (once after collecting half the data, then a second time after collecting the full data) against the critical value $p_{crit}$ = .05, the overall false-positive rate of this procedure will be $\alpha$ = .083 (rather than the desired \alpha = .05) [^2].
+In traditional "Fixed N" designs, researchers must collect all their data before they can test their hypothesis [^1]. This constraint is inherent to null-hypothesis significance testing: If researchers repeatedly test for the presence of an effect while data collection is ongoing, they will inflate their false-positive rate. For instance, if a researcher tests the same hypothesis twice (once after collecting half the data, then a second time after collecting the full data) against the critical value $p_{crit}$ = .05, the overall false-positive rate of this procedure will be $\alpha$ = .083 (rather than the desired $\alpha$ = .05) [^2].
 
 This limitation is costly for researchers: It means that whenever the effect size is larger than expected, they will collect "too much" data (i.e., more than they need to achieve a decent amount of statistical power)... but will learn this after the data has already been collected. 
 
 Group sequential designs, on the other hand, do not have this constraint. These designs allow researchers to conduct a pre-specified number of interim hypothesis tests on their data, and to terminate data collection whenever the effect is large enough to reject the null, all the while keeping false-positive rates at a nominal level.
 
-How? By conducting each of these hypothesis tests against a stricter critical value. If, in the example above, the researcher performs each test against $p_{crit}$ = .0294$ rather than $p_{crit}$ = .05, then the false-positive rate across the two tests will be exactly $\alpha$ = .05.
+How? By conducting each of these hypothesis tests against a stricter critical value. If, in the example above, the researcher performs each test against $p_{crit}$ = .0294 rather than $p_{crit}$ = .05, then the false-positive rate across the two tests will be exactly $\alpha$ = .05.
 
 Now, if group sequential designs can be so simple, why aren't they used more often? We think it reflects a mix of a lack of guidance on how to implement them, a lack of awareness about their benefits, and a fear that the technique will not be perceived as legitimate by reviewers.
 
 This adoption gap motivated us to write a paper (just accepted at the Journal of Consumer Researcher) titled "Pre-Registered Interim Analysis Designs (PRIADs): Increasing the Cost Effectiveness of Hypothesis Testing". This paper highlights the benefits that group sequential designs can unlock for researchers, discusses the conditions under which they can offer a valid alternative to "Fixed N" designs, and offers a practical procedure (called PRIAD) to help researchers design and implement group sequential designs in their own studies. 
 
-This blog post summarizes our key insights, and the authors' copy of the accepted paper is available here: 
-
-## PRIADs: A Practical Procedure to Facilitate the Adoption of Group Sequential Designs
-
-At a high level, the logic of group sequential designs is pretty straightforward: 
-* Choose the maximum number of observations you want to collect
-* Commit to a pre-specified number of hypothesis tests, and conduct each of them at pre-specified timings against stricter critical values. 
-* Stop data collection as soon as one of your hypothesis tests is able to reject the null.
-
-In practice, however, group sequential designs require researchers to make a number of decisions: What should determine the maximum number of observations that I want to collect? How many hypothesis tests should I conduct? At which point during the data collection process? Which critical values should I choose? What can I do if my data shows underwhelming support for the alternative hypothesis? 
-
-PRIAD is a practical procedure to help researchers make these decisions. We outline the five decisions involved in creating a group sequential design, explain the intuition behind each of them, and provide guidelines to researchers.
-
-1. First, researchers decide on the maximum number of observations that the design might collect should the experiment proceed to its end. This choice can be informed by cost considerations, by a Smallest Effect Size Of Interest analysis, or by a belief on the smallest expected effect.
-
-2. Then, choose many interim analyses to conduct. Conducting more interim analysis means more opportunities to stop early... but results in a greater loss of statistical power (since the final tests are conducted against a more stringent rejection threshold).
-
-3. Then, choose when to conduct the interim analysis. These are typically spread uniformly (e.g., at 25%, 50%, 75% and 100% of data collection).
-
-4. Finally, choose the type of correction to apply to statistical tests. PRIADs give researchers a choice between the Pocock correction (which maximizes the odds of an early stop, at the expense of a less powerful statistical test at the final analysis) and the O'Brien-Fleming correction (which maximizes the power of the final test, but makes early stops less likely). 
-
-5. Optionally, choose whether and when to stop for "futility": Interrupt the study before its end if an interim analysis reveals underwhelming support for the researcher's hypothesis.
-
-As the name of the procedure suggests, these decisions need to be pre-registered: Researchers should specify all the decisions they have made before they start collecting data, and should not deviate from these decisions once the data collection has started.
-
-To help researchers make these decisions and generate the corresponding pre-registration, we have designed [PRIApp](https://priadconsumerresearch.shinyapps.io/PRIApp/): An interactive Shiny app that allows researchers to design PRIADs and simulate their outcomes. 
-
-For researchers who do not want to make these decisions themselves finally, our paper also offers four "off-the-shelf" PRIADs.
+This blog post summarizes our key insights, and the authors' copy of the accepted paper [is available here](https://osf.io/864ef).
 
 ## The Benefits of PRIADs
 
-Why would researchers want to adopt PRIADs? We show that they have multiple benefits over Fixed N designs:
+First, why would researchers want to adopt PRIADs? We show that they have multiple benefits over Fixed N designs:
 
 ### They Allow Researchers to Manage Effect Size Uncertainty, and Deliver More Informative Null Results
 
@@ -133,6 +106,34 @@ In a nutshell, PRIADs are appropriate tools:
 1. When they are pre-registered. We know the damages uncontrolled researchers degrees of freedom can inflict on a field, which is why we require all PRIADs to be accompanied by a detailed pre-registration. When evaluating PRIAD-based studies, readers and reviewers should carefully check that the reported design and analysis matches the pre-registration.
 2. When used in the context of confirmatory hypothesis testing. They are not suited to exploratory studies, or for studies that aim at quantifying the magnitude of a phenomenon.
 3. When researchers face a meaningful trade-off between statistical power and resources. If researchers have access to a convenience sample of a given size for instance, it doesn't make sense to use a PRIAD: They should just collect all the data they have access to.
+
+## How To Design PRIADs?
+
+At a high level, the logic of group sequential designs is pretty straightforward: 
+* Choose the maximum number of observations you want to collect
+* Commit to a pre-specified number of hypothesis tests, and conduct each of them at pre-specified timings against stricter critical values. 
+* Stop data collection as soon as one of your hypothesis tests is able to reject the null.
+
+In practice, however, group sequential designs require researchers to make a number of decisions: What should determine the maximum number of observations that I want to collect? How many hypothesis tests should I conduct? At which point during the data collection process? Which critical values should I choose? What can I do if my data shows underwhelming support for the alternative hypothesis? 
+
+PRIAD is a practical procedure to help researchers make these decisions. We outline the five decisions involved in creating a group sequential design, explain the intuition behind each of them, and provide guidelines to researchers.
+
+1. First, researchers decide on the maximum number of observations that the design might collect should the experiment proceed to its end. This choice can be informed by cost considerations, by a Smallest Effect Size Of Interest analysis, or by a belief on the smallest expected effect.
+
+2. Then, choose many interim analyses to conduct. Conducting more interim analysis means more opportunities to stop early... but results in a greater loss of statistical power (since the final tests are conducted against a more stringent rejection threshold).
+
+3. Then, choose when to conduct the interim analysis. These are typically spread uniformly (e.g., at 25%, 50%, 75% and 100% of data collection).
+
+4. Finally, choose the type of correction to apply to statistical tests. PRIADs give researchers a choice between the Pocock correction (which maximizes the odds of an early stop, at the expense of a less powerful statistical test at the final analysis) and the O'Brien-Fleming correction (which maximizes the power of the final test, but makes early stops less likely). 
+
+5. Optionally, choose whether and when to stop for "futility": Interrupt the study before its end if an interim analysis reveals underwhelming support for the researcher's hypothesis.
+
+As the name of the procedure suggests, these decisions need to be pre-registered: Researchers should specify all the decisions they have made before they start collecting data, and should not deviate from these decisions once the data collection has started.
+
+To help researchers make these decisions and generate the corresponding pre-registration, we have designed [PRIApp](https://priadconsumerresearch.shinyapps.io/PRIApp/): An interactive Shiny app that allows researchers to design PRIADs and simulate their outcomes. 
+
+For researchers who do not want to make these decisions themselves finally, our paper also offers four "off-the-shelf" PRIADs.
+
 
 ## Conclusion
 

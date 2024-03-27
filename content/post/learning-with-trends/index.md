@@ -5,7 +5,7 @@ title: "Can You Learn What Helps a Baby Sleep at Night?"
 subtitle: "How natural improvements in outcomes can lead us to form strong, yet incorrect, beliefs about how the world works."
 summary: "How natural improvements in outcomes can lead us to form strong, yet incorrect, beliefs about how the world works."
 authors: [Quentin André]
-tags: [Tutorial]
+tags: []
 categories: []
 date: 2024-02-24
 lastmod: 2024-02-24
