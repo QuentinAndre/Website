@@ -55,7 +55,7 @@ source:"Journal of Consumer Research"
 ( OSF | ResearchBox | "Open Science Framework" ) & ( pre-reg* | prereg* | aspredicted* )
 ```
 
-If you have never seen some of these symbols before, the pipe symbol | is the logical operator OR, the ampersand & is the logical operator AND, and the star symbol at the end of a string XYZ means "a words that start with XYZ, followed by any number of characters". 
+If you have never seen some of these symbols before, the pipe symbol | is the logical operator OR, the ampersand & is the logical operator AND, and the star symbol at the end of a string XYZ means "a word that start with XYZ, followed by any number of characters". 
 
 Easy, right? Indeed, all the papers returned by this query mentioned pre-registrations, and mentioned OSF/ResearchBox. We thus concluded that the query had succeeded in finding the papers we wanted to find.
 
