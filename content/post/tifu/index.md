@@ -51,7 +51,8 @@ To identify pre-registered studies with open data in JCR, we used a software cal
 Now, Google Scholar isn't smart enough to process a sentence like this. Instead, you have to type a query that describes these criteria. Based on my experience querying databases and other search engines, I wrote the following query: 
 
 ```
-source:"Journal of Consumer Research" ( OSF | ResearchBox | "Open Science Framework" ) & ( pre-reg* | prereg* | aspredicted* )
+source:"Journal of Consumer Research" 
+( OSF | ResearchBox | "Open Science Framework" ) & ( pre-reg* | prereg* | aspredicted* )
 ```
 
 If you have never seen some of these symbols before, the pipe symbol | is the logical operator OR, the ampersand & is the logical operator AND, and the star symbol at the end of a string XYZ means "a words that start with XYZ, followed by any number of characters". 
