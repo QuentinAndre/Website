@@ -48,7 +48,7 @@ So instead of kicking our feet up and celebrating our paper acceptance with a co
 
 To identify pre-registered studies with open data in JCR, we used a software called Publish or Perish. It allows you to run complex queries on Google Scholar, such as "find all the paper in JCR that contains at least one of the words OSF, open science framework, or ResearchBox, and at least one word that starts with pre-reg, prereg, or aspredicted".
 
-Now, Google Scholar isn't smart enough to process a sentence like this. Instead, you have to type a query that describes these criteria. Based on my experience querying databased and other search engines, I wrote the following query: 
+Now, Google Scholar isn't smart enough to process a sentence like this. Instead, you have to type a query that describes these criteria. Based on my experience querying databases and other search engines, I wrote the following query: 
 
 <div style="text-align: center;"><i>source:"Journal of Consumer Research" (OSF | ResearchBox | "Open Science Framework") & (pre-reg* | prereg* | aspredicted* )<i/></div>
 
