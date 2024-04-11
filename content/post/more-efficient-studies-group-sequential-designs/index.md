@@ -30,6 +30,8 @@ projects: []
 
 ---
 
+NOTE: Due to two mistakes that previously existed in this research, some of the numbers originally described in this blog post were incorrect. This post was updated on April 11th 2024 to reflect the updated (and now correct) numbers. I apologize for this error. If you want to learn more, [check out this other blog post]({{< ref "/post/tifu" >}}).
+
 In previous blog posts, we have discussed [a core issue of power analysis]({{< ref "/post/is-power-analysis-useless" >}}) (it requires researchers to predict the effect size that their experiment will yield, something that is often impossible to do accurately) and [a costly solution to this issue]({{< ref "/post/making-power-analysis-informative-again" >}}) (powering studies for the smallest effect size that researchers are interested in detecting or can afford to detect).
 
 In this third blog post, we are going to discuss a better solution to the problem of sample size determination: Group sequential designs. These designs can be powered to detect the smallest effect size researchers care about... and will stop data collection earlier whenever the effect is larger than expected.
@@ -77,19 +79,17 @@ Our paper reports simulations showing that, in most circumstances, PRIADs are mo
 * As long as researchers have more than 25% power to detect an effect, some PRIADs can achieve equivalent power while collecting a smaller number of observations.
 * At higher levels of statistical power (e.g., 55%), all the PRIADs that we discuss in the paper are more efficient.
 
-This is a theoretical result, but would these savings materialize in practice? To answer this question, we conducted a re-analysis of all the pre-registered studies with open data published in JCR. We were able to find 104 studies, and managed to reproduce the results of 101 of them. We simulate, for each study, what would have happened if researchers had used a PRIAD rather than a Fixed N study. We consider the four kinds of "off-the-shelf" PRIADs that we discuss in the paper.
+This is a theoretical result, but would these savings materialize in practice? To answer this question, we conducted a re-analysis of all the pre-registered studies with open data published in JCR. We were able to find 223 studies, and managed to reproduce the results of 212 of them. We simulate, for each study, what would have happened if researchers had used a PRIAD rather than a Fixed N study. We consider the four kinds of "off-the-shelf" PRIADs that we discuss in the paper.
 
 The figure below shows the outcome of the studies. Using Fixed N designs, researchers always collected the full sample, and found a significant result in 95% of the studies. If the researchers had used PRIADs instead, they would have often stopped data collection much earlier: In half of the studies, group sequential designs would have found a significant result after collecting only half the data!
 
 ![png](files/Figure5.png)
 
-What about statistical power? The figure shows that most of the studies that reached significance with a Fixed N study would have also reached significance with a group sequential design (between 84% and 100%, depending on the type of PRIAD) .
+What about statistical power? The figure shows that most of the studies that reached significance with a Fixed N study would have also reached significance with a group sequential design (between 81% and 99%, depending on the type of PRIAD) .
 
 Finally, what does this imply for cost-savings? Let's be conservative and go with a sizeable penalty for non-significance: Whenever a researcher fails to find a significant result with a PRIAD, we will assume they will re-run the study with twice the sample size. This means that a "failed" group sequential design results into cost-savings of minus 200%. 
 
-The second figure shows that, even under this conservative assumption, the authors of the studies in our re-analysis would have saved between 32% and 43% of the original participant counts!
-
-![png](files/Figure6.png)
+Our analyses show that, even under this conservative assumption, the authors of the studies in our re-analysis would have saved between 20% and 29% of the original participant counts.
 
 ### They Allow to Save Resources When Conducting Pilot Studies
 

@@ -30,16 +30,18 @@ projects: []
 
 ---
 
+NOTE: Due to a mistake I made when searching for pre-registered studies with open data in JCR, the numbers mentioned in a previous version of this post were incorrect. This post was updated on April 11th 2024 to reflect the updated (and now correct) numbers. I apologize for this error. If you want to learn more, [check out this other blog post]({{< ref "/post/tifu" >}}).
+
 My co-author Nick Reinholtz and I have recently attempted ([as part of an effort to validate the cost-effectiveness of method we are writing a paper on](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4561485)) to reproduce the results of all pre-registered studies with open data we could find in the Journal of Consumer Research. What did we learn? A few interesting things!
 
 ## Lesson 1: The Data Can Be Available... Just Not to You
-We searched for all articles published in JCR which contain at least one of the keywords “osf”, “Open Science Framework” or “researchbox” (to identify posted datasets) and at least one of the keywords “pre-reg*”, “prereg*”, or “aspredicted” (to identify pre-registrations). This search returned 37 papers: Exciting!
+We searched for all articles published in JCR which contain at least one of the keywords “osf”, “Open Science Framework” or “researchbox” (to identify posted datasets) and at least one of the keywords “pre-registration”, “preregistration”, "pre-registered", "preregistered", or “aspredicted” (to identify pre-registrations). This search returned 107 papers: Exciting!
 
 When we took a closer look at this set however, we found out that a few papers mentioned that the data was available on an OSF/ResearchBox repository... but did not share a link. A mistake? No, a literal interpretation of the [JCR Data Policy](https://consumerresearcher.com/jcrs-data-policy-in-practice), which requires that the data is made accessible to the Editor and Associate Editor... but not to the readers of the journal.
 
 I must admit I was a bit surprised: To me, the main barrier to sharing data is that it takes time and effort to gather your data files, generate codebooks, and upload them somewhere. But once you've done it for one person, what's the cost of making it accessible to the public?
 
-In the end, we only had 25 papers with data. Bummer... but less work for us I guess?
+In the end, we had 51 papers with data. Bummer... but less work for us I guess?
 
 ## Lesson 2: Many Pre-Registrations Are Under-Specified, And Deviations Are Rarely Acknowledged
 
@@ -58,6 +60,6 @@ Descriptions of analyses are, as it turns out, highly imprecise: In many cases, 
 
 ## Lesson 4: Things Are Getting Better
 
-As an open-science enthusiast, I was honestly a bit bummed to find out that out of all the research ever published in JCR, we could "only" find 25 papers with at least one pre-registered study and open data. 
+As an open-science enthusiast, I was honestly a bit bummed to find out that out of all the research ever published in JCR, we could "only" find 51 papers with at least one pre-registered study and open data. 
 
-The silver lining is that things are improving. The first paper with open data and pre-registration was published in 2020. In 2023, there were 11 such papers. Progress!
+The silver lining is that things are improving. The first paper with at least one pre-registered sutdy with open data was published in 2019. In 2023, there were 25 such papers. Progress!
