@@ -50,9 +50,13 @@ To identify pre-registered studies with open data in JCR, we used a software cal
 
 Now, Google Scholar isn't smart enough to process a sentence like this. Instead, you have to type a query that describes these criteria. Based on my experience querying databases and other search engines, I wrote the following query: 
 
-<div style="text-align: center;"><i>source:"Journal of Consumer Research" (OSF | ResearchBox | "Open Science Framework") & (pre-reg* | prereg* | aspredicted* )<i/></div>
+```
+source:"Journal of Consumer Research" ( OSF | ResearchBox | "Open Science Framework" ) & ( pre-reg* | prereg* | aspredicted* )
+```
 
-If you have never seen some of these symbols before, the pipe symbol ** | ** is the logical operator OR, the ampersand ** & ** is the logical operator AND, and the star symbol at the end of a string XYZ means "a words that start with XYZ, followed by any number of characters". Easy, right? Indeed, all the papers returned by this query mentioned pre-registrations, and mentioned OSF/ResearchBox. We thought the query had succeeded in finding all the papers we wanted to find.
+If you have never seen some of these symbols before, the pipe symbol | is the logical operator OR, the ampersand & is the logical operator AND, and the star symbol at the end of a string XYZ means "a words that start with XYZ, followed by any number of characters". 
+
+Easy, right? Indeed, all the papers returned by this query mentioned pre-registrations, and mentioned OSF/ResearchBox. We thus concluded that the query had succeeded in finding the papers we wanted to find.
 
 As we would soon discover after our colleague's remark though, [Google Scholar has its own way of processing queries](https://library.uregina.ca/c.php?g=606135&p=4201992). In Google Scholar world, the star symbol doesn't exist... and the *-* symbol (like the one that appears in "pre-reg" for instance) means a negation (i.e., papers that contain "pre" but not "reg"). Long story short, the query that we used definitely did not return all the JCR papers containing pre-registered studies with open data. In fact, it missed approximately half of them.
 
