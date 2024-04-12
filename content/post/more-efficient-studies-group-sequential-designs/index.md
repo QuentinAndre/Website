@@ -30,7 +30,7 @@ projects: []
 
 ---
 
-NOTE: Due to two mistakes that previously existed in this research, some of the numbers originally described in this blog post were incorrect. This post was updated on April 11th 2024 to reflect the updated (and now correct) numbers. I apologize for this error. If you want to learn more, [check out this other blog post]({{< ref "/post/tifu" >}}).
+* NOTE: Due to two mistakes that previously existed in this research, some of the numbers originally described in this blog post were incorrect. This post was updated on April 11th 2024 to reflect the updated (and now correct) numbers. I apologize for this error. If you want to learn more, [check out this other blog post]({{< ref "/post/tifu" >}}). *
 
 In previous blog posts, we have discussed [a core issue of power analysis]({{< ref "/post/is-power-analysis-useless" >}}) (it requires researchers to predict the effect size that their experiment will yield, something that is often impossible to do accurately) and [a costly solution to this issue]({{< ref "/post/making-power-analysis-informative-again" >}}) (powering studies for the smallest effect size that researchers are interested in detecting or can afford to detect).
 

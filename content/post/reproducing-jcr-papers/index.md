@@ -30,7 +30,7 @@ projects: []
 
 ---
 
-NOTE: Due to a mistake I made when searching for pre-registered studies with open data in JCR, the numbers mentioned in a previous version of this post were incorrect. This post was updated on April 11th 2024 to reflect the updated (and now correct) numbers. I apologize for this error. If you want to learn more, [check out this other blog post]({{< ref "/post/tifu" >}}).
+* NOTE: Due to a mistake I made when searching for pre-registered studies with open data in JCR, the numbers mentioned in a previous version of this post were incorrect. This post was updated on April 11th 2024 to reflect the updated (and now correct) numbers. I apologize for this error. If you want to learn more, [check out this other blog post]({{< ref "/post/tifu" >}}). * 
 
 My co-author Nick Reinholtz and I have recently attempted ([as part of an effort to validate the cost-effectiveness of method we are writing a paper on](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4561485)) to reproduce the results of all pre-registered studies with open data we could find in the Journal of Consumer Research. What did we learn? A few interesting things!
 
