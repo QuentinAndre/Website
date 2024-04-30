@@ -45,7 +45,11 @@ As I've repeatedly discussed on this blog, [the p-values presented in a paper co
 
 ### It Is Less Biased than Other Heuristics
 
-Now, it isn't a perfect heuristic. It is noisy: You can get unlucky, and have p-values all close to .05 under decent power. It can be hard to judge how independent or dependent the different tests are, and thus how likely or unlikely it is to find "bunched-up" p-values. You can even argue that it is a biased heuristics: Not all researchers can afford the sample sizes and designs required to test their hypothesis with sufficient power! I don't deny that, but I think this heuristic is much less biased than other criteria we are using to decide which papers to read (like mostly reading papers from top journals, or from well-published scientists). 
+Now, it isn't a perfect heuristic of course.
+
+For starter, it is noisy. Researchers can get unlucky, and find p-values all close to .05 even though they had decent power. As a reader, it can be hard to assess how independent or dependent the different tests are, and thus how likely or unlikely it is to find "bunched-up" p-values. 
+
+You can even argue that circling p-values is a biased heuristic: Not all researchers can afford the sample sizes and designs required to test their hypothesis with sufficient power! I don't deny that, but I think this heuristic is much less biased than other criteria we are using to decide which papers to read (like mostly reading papers from top journals, or from well-published scientists). 
 
 That's what heuristics are: Imperfect tools for making fast decisions under limited information.
 
