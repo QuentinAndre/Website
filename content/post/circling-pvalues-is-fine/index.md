@@ -7,8 +7,8 @@ summary: "You noticed that the p-values in a paper are close to .05. Does this m
 authors: [Quentin André]
 tags: [Tutorial]
 categories: []
-date: 2024-05-30
-lastmod: 2024-05-30
+date: 2024-04-30
+lastmod: 2024-04-30
 featured: false
 draft: false
 toc: false
