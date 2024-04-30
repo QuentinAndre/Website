@@ -29,7 +29,7 @@ image:
 projects: []
 
 ---
-A few days ago, my Twitter feed erupted after I pointed out that [the p-values in a recent paper discussing the impact of smartphone bans on student outcomes and mental health were all close to the papers' threshold for discovery (p = .1)]. While some thanked me for pointing out this pattern, others strongly objected to my observation, and more generally to the practice of what they call 'circling p-values'. 
+A few days ago, my Twitter feed erupted after I pointed out that [the p-values in a recent paper discussing the impact of smartphone bans on student outcomes and mental health were all close to the papers' threshold for discovery (p = .1)](https://twitter.com/andre_quentin/status/1783148596956635465). While some thanked me for pointing out this pattern, others strongly objected to my observation, and more generally to the practice of what they call 'circling p-values'. 
 
 I won't rehash the full debate, but one person in particular appeared to view this practice as particularly evil, calling it in a blost post the "polygraph and baton of self-styled stats cops on Twitter." I happen to (strongly) disagree, and will try to make a short two-part case for "circling p-values."
 
@@ -45,7 +45,9 @@ As I've repeatedly discussed on this blog, [the p-values presented in a paper co
 
 ### It Is Less Biased than Other Heuristics
 
-Now, it isn't a perfect heuristic. You can even argue it's biased: Not all researchers can afford the sample sizes and designs required to test their hypothesis with sufficient power! I don't deny that, but I think this heuristic is much less biased than other criteria we are using to decide which papers to read (like mostly reading papers from top journals, or from well-published scientists). That's what heuristics are: Imperfect tools for making fast decisions under limited information.
+Now, it isn't a perfect heuristic. It is noisy: You can get unlucky, and have p-values all close to .05 under decent power. It can be hard to judge how independent or dependent the different tests are, and thus how likely or unlikely it is to find "bunched-up" p-values. You can even argue that it is a biased heuristics: Not all researchers can afford the sample sizes and designs required to test their hypothesis with sufficient power! I don't deny that, but I think this heuristic is much less biased than other criteria we are using to decide which papers to read (like mostly reading papers from top journals, or from well-published scientists). 
+
+That's what heuristics are: Imperfect tools for making fast decisions under limited information.
 
 ## Circling p-values Isn't Immoral
 
