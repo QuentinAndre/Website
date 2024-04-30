@@ -2,8 +2,8 @@
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
 title: "In Defense of 'Circling p-values'"
-subtitle: "You noticed that the p-values in a paper are close to .05. Does this make you a bad person? Can 'circling p-values' ever be a useful heuristics? My two cents on an (apparently?) controversial topic."
-summary: "You noticed that the p-values in a paper are close to .05. Does this make you a bad person? Can 'circling p-values' ever be a useful heuristics? My two cents on an (apparently?) controversial topic."
+subtitle: "You noticed that the p-values in a paper are close to .05. Does this make you a bad person? Can 'circling p-values' ever be a useful heuristic? My two cents on an (apparently?) controversial topic."
+summary: "You noticed that the p-values in a paper are close to .05. Does this make you a bad person? Can 'circling p-values' ever be a useful heuristic? My two cents on an (apparently?) controversial topic."
 authors: [Quentin André]
 tags: [Tutorial]
 categories: []
@@ -31,9 +31,9 @@ projects: []
 ---
 A few days ago, my Twitter feed erupted after I pointed out that [the p-values in a recent paper discussing the impact of smartphone bans on student outcomes and mental health were all close to the papers' threshold for discovery (p = .1)](https://twitter.com/andre_quentin/status/1783148596956635465). While some thanked me for pointing out this pattern, others strongly objected to my observation, and more generally to the practice of what they call 'circling p-values'. 
 
-I won't rehash the full debate, but one person in particular appeared to view this practice as particularly evil, calling it in a blost post the "polygraph and baton of self-styled stats cops on Twitter." I happen to (strongly) disagree, and will try to make a short two-part case for "circling p-values."
+I won't rehash the full debate, but one person in particular appeared to view this practice as particularly evil, calling it in a blog post the "polygraph and baton of self-styled stats cops on Twitter." I happen to (strongly) disagree, and will try to make a short two-part case for "circling p-values."
 
-First, can it be a useful heuristic?
+First, can it be considered a useful heuristic?
 
 ## Circling p-values Is a Useful Heuristic
 
