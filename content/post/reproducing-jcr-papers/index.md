@@ -62,4 +62,4 @@ Descriptions of analyses are, as it turns out, highly imprecise: In many cases, 
 
 As an open-science enthusiast, I was honestly a bit bummed to find out that out of all the research ever published in JCR, we could "only" find 51 papers with at least one pre-registered study and open data. 
 
-The silver lining is that things are improving. The first paper with at least one pre-registered sutdy with open data was published in 2019. In 2023, there were 25 such papers. Progress!
+The silver lining is that things are improving. The first paper with at least one pre-registered study with open data was published in 2019. In 2023, there were 25 such papers. Progress!
