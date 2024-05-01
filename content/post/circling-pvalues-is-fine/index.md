@@ -41,7 +41,7 @@ There has never been, in the history of social sciences, such a large number of 
 
 ### It Contains Valuable Information
 
-As I've repeatedly discussed on this blog, [the p-values presented in a paper contain information about the statistical power the researcher had to study their phenomenon]({{< ref "/post/evaluating-statistical-value" >}}). Large p-values (p > .01) are, under a sufficient amount of statistical power, rare]({{< ref "/post/large-pvalues-and-power-analysis" >}}). So when you see p-values in a paper that are all close to the significance threshold, I think it is fine to update in the direction of "the researchers probably didn't have the statistical power to distinguish small effects from null effects".
+As I've repeatedly discussed on this blog, [the p-values presented in a paper contain information about the statistical power the researcher had to study their phenomenon]({{< ref "/post/evaluating-statistical-value" >}}). Large p-values (p > .01) [[are, under a sufficient amount of statistical power, rare]({{< ref "/post/large-pvalues-and-power-analysis" >}}). So when you see p-values in a paper that are all close to the significance threshold, I think it is fine to update in the direction of "the researchers probably didn't have the statistical power to distinguish small effects from null effects".
 
 ### It Is Less Biased than Other Heuristics
 
