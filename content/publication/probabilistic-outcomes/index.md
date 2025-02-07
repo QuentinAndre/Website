@@ -73,12 +73,6 @@ url_slides:
 url_source:
 url_video:
 
-links:
-
-- icon_pack: fas
-  icon:
-  name: Notebook
-  url: ""
 
 # Featured image
 
